@@ -1,0 +1,114 @@
+{C:/Users/Otrebor Azilab/Desktop/execute/execute/hmux1bit4x1.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/execute/execute/hmux1bit4x1.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Mux4x11
+-- Compiling architecture archMm of Mux4x11
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/execute/execute/hMux4x1.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/execute/execute/hMux4x1.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Mux4x1
+-- Compiling architecture archM of Mux4x1
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/execute/execute/hOneBitFA.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/execute/execute/hOneBitFA.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity my_adder
+-- Compiling architecture a_my_adder of my_adder
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/execute/execute/hzeroextend.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/execute/execute/hzeroextend.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ZEROEXTEND
+-- Compiling architecture archZ of ZEROEXTEND
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/Arch_Labs/OneBitFA.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/Arch_Labs/OneBitFA.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity my_adder
+-- Compiling architecture a_my_adder of my_adder
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/execute/execute/hexecute.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/execute/execute/hexecute.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity EXECUTE
+-- Compiling architecture STRUCTEXECUTE of EXECUTE
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/execute/execute/hmux1.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/execute/execute/hmux1.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux1
+-- Compiling architecture archmux1 of mux1
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/execute/execute/hmux2.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/execute/execute/hmux2.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux2
+-- Compiling architecture archmux2 of mux2
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/execute/execute/hEXtoMEMbuffer.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/execute/execute/hEXtoMEMbuffer.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity bufferr
+-- Compiling architecture bufferarch of bufferr
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/execute/execute/hN-BitFA.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/execute/execute/hN-BitFA.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity my_Nadder
+-- Compiling architecture a_my_Nadder of my_Nadder
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/execute/execute/hALU.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/execute/execute/hALU.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ALU
+-- Compiling architecture structALU of ALU
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/Arch_Labs/N-BitFA.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/Arch_Labs/N-BitFA.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity my_Nadder
+-- Compiling architecture a_my_Nadder of my_Nadder
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/execute/execute/hzeroextract.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/execute/execute/hzeroextract.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ZEROEXTRACT
+-- Compiling architecture archZE of ZEROEXTRACT
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/execute/execute/hregister.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/execute/execute/hregister.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Loayregister
+-- Compiling architecture reg_arch of Loayregister
+
+} {} {}}

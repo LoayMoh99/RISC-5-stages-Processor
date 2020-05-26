@@ -1,0 +1,15 @@
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.all;
+
+ENTITY my_adder IS
+	PORT (a,b : IN  std_logic;
+		  s, cout : OUT std_logic );
+END my_adder;
+
+ARCHITECTURE a_my_adder OF my_adder IS
+BEGIN
+		
+	s <= (a and (not b)) or (b and(not a));
+	cout <= (a AND b) ;
+		
+END a_my_adder;
