@@ -2,41 +2,39 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE ieee.numeric_std.all;
 
-Entity ControlUnit is
+Entity ControlUnit_V is
 port( 
 --inputs:
 	clk,INT,Reset : IN std_logic;
         op_code : IN std_logic_vector(4 downto 0);
 	Rdst : IN std_logic_vector(2 downto 0); --Instr[7-5]
 	Rsrc : IN std_logic_vector(2 downto 0); --Instr[10-8]
+counterIn: IN unsigned(2 downto 0):="000";
+
 --outputs:
 	ALUop,ALUsrc,BranchEN,StackEN,StackAddr,regWrite,regWrite2,memTOreg,OUTportEN,memRead,memWrite : OUT std_logic;
 	CarryEN,BrType,WBdataSrc : OUT std_logic_vector(1 downto 0);
 	Reset1,CallEn,INT1,INT2,StallCU,F_Flush,WrFlags,ChangePC : OUT std_logic;
-	MemSrcData : OUT std_logic_vector(1 downto 0)
+	MemSrcData : OUT std_logic_vector(1 downto 0);
+counterOut: Out unsigned(2 downto 0)
 );
-end entity ControlUnit;
+end entity ControlUnit_V;
 
-Architecture ControlUnit_arch of ControlUnit is
+Architecture ControlUnit_V_arch of ControlUnit_V is
 
 
-signal counter: unsigned(2 downto 0):="000";
+signal counter: unsigned(2 downto 0);
 signal compNormal: std_logic_vector(1 downto 0):="00";
 signal currFetchIsMem: std_logic:='0'; --0-> not mem or 1->mem
 signal sel: std_logic_vector(2 downto 0);--sel which counter works.. 
 
 Begin
-Process(clk,INT,Reset,op_code(4 downto 0),Rsrc,Rdst) is
+Process(clk,INT,Reset,op_code(4 downto 0),Rdst,Rsrc,counterIn) is
 begin
-if falling_edge(clk) then
-	if counter/="000" then
-		counter<= to_unsigned((to_integer(counter))-1,3);
-	end if;
-end if;
-
+counter<=counterIn;
 --reset
 if Reset='1' then
-	counter<="001";
+	counter<="010";
 	sel<="000";
 --interrupt
 elsif INT='1' then
@@ -59,10 +57,9 @@ elsif op_code(4 downto 0)="11111" then
 elsif counter="000" then
 	sel<="111";
 end if;
-
    if sel="000" then --reset
 	compNormal<="00";
-	if counter="001" then
+	if counter="010" then
 		StallCU<='1'; 
 		F_Flush<='1'; 
 		Reset1<='1'; 
@@ -71,14 +68,14 @@ end if;
 	INT1<='0'; 
 	WrFlags<='0';
 	ChangePC<='0';
---	elsif counter="001" then
-	--	 F_Flush<='1'; 
-	--	 Reset1<='0'; 
-	--MemSrcData <="10";
-	--StallCU<='0'; 
-	--INT1<='0'; 
-	--WrFlags<='0';
-	--ChangePC<='0';
+	elsif counter="001" then
+		 F_Flush<='1'; 
+		 Reset1<='0'; 
+	MemSrcData <="10";
+	StallCU<='0'; 
+	INT1<='0'; 
+	WrFlags<='0';
+	ChangePC<='0';
 	else sel<="111";
 	end if;
 
@@ -340,17 +337,17 @@ end if;
 	else 	WBdataSrc<="00";
 	end if;
 ----------------------------------------------------------------------------------
-	if (op_code(4 downto 1)="0101" OR op_code(4 downto 2)="101" OR op_code(4 downto 0)="01100" OR op_code(4 downto 0)="10000" OR op_code(4 downto 0)="11001" OR op_code(4 downto 0)="11100") then
+	if op_code(4 downto 1)="0101" OR op_code(4 downto 2)="101" OR op_code(4 downto 0)="01100" OR op_code(4 downto 0)="10000" OR op_code(4 downto 0)="11001" OR op_code(4 downto 0)="11100" then
 		regWrite<='0';
 	else 	regWrite<='1';
 	end if;
 ----------------------------------------------------------------------------------
 	if op_code(4 downto 0)="00100" and Rdst/=Rsrc then
-		regWrite2<='1';
-	else 	regWrite2<='0';
+		regWrite2<='0';
+	else 	regWrite2<='1';
 	end if;
 ----------------------------------------------------------------------------------
-	if (op_code(4 downto 0)="11000" OR op_code(4 downto 0)="11101") then
+	if op_code(4 downto 0)="11000" OR op_code(4 downto 0)="11101" then
 		memTOreg<='0';
 	else 	memTOreg<='1';
 	end if;
@@ -360,18 +357,19 @@ end if;
 	else 	OUTportEN<='0';
 	end if;
 ----------------------------------------------------------------------------------
-	if (op_code(4 downto 0)="11000" OR op_code(4 downto 0)="11101") then
+	if op_code(4 downto 0)="11000" OR op_code(4 downto 0)="11101" then
 		memRead<='1';
 	else 	memRead<='0';
 	end if;
 ----------------------------------------------------------------------------------
-	if (op_code(4 downto 0)="11001" OR op_code(4 downto 0)="11100") then
+	if op_code(4 downto 0)="11001" OR op_code(4 downto 0)="11100" then
 		memWrite<='1';
 	else 	memWrite<='0';
 	end if;
    end if;
 ----------------------------------------------------------------------------------
+counterOut<=counter;
 ----------------------------------------------------------------------------------
 end Process;
 
-end ControlUnit_arch;
+end ControlUnit_V_arch;

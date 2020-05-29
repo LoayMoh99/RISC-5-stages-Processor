@@ -1,21 +1,34 @@
-vsim -gui work.fetchunit
-add wave sim:/fetchunit/*
-mem load -i {C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/instrMem.mem} -format binary /fetchunit/memory/InstMem
-force -freeze sim:/fetchunit/clk 1 0, 0 {50 ps} -r 100
-force -freeze sim:/fetchunit/Flush 0 0
-force -freeze sim:/fetchunit/StallCU 0 0
-force -freeze sim:/fetchunit/StallHU 0 0
-force -freeze sim:/fetchunit/Call 0 0
-force -freeze sim:/fetchunit/Int1 0 0
-force -freeze sim:/fetchunit/Reset1 0 0
-force -freeze sim:/fetchunit/Int2 0 0
-force -freeze sim:/fetchunit/Reset2 0 0
-force -freeze sim:/fetchunit/FirstThreeBitodOPcode 000 0
-force -freeze sim:/fetchunit/Branch 32'h00000011 0
-force -freeze sim:/fetchunit/PoppedPC 32'h00000004 0
-force -freeze sim:/fetchunit/PCsrc 0 0
-force -freeze sim:/fetchunit/ChangePC 0 0
-force -freeze sim:/fetchunit/callRdst 32'h00000011 0
+vsim -gui work.fu_fd
+add wave sim:/fu_fd/*
+mem load -i {C:/Users/Otrebor Azilab/Desktop/Arch Project/instrMem.mem} -format binary /fu_fd/fu/memory/InstMem
+force -freeze sim:/fu_fd/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/fu_fd/StallCU 1 0
+force -freeze sim:/fu_fd/StallHU 0 0
+force -freeze sim:/fu_fd/Call 0 0
+force -freeze sim:/fu_fd/Int1 0 0
+force -freeze sim:/fu_fd/Int2 0 0
+force -freeze sim:/fu_fd/Reset 1 0
+force -freeze sim:/fu_fd/Flush 0 0
+force -freeze sim:/fu_fd/Reset1 0 0
+force -freeze sim:/fu_fd/Branch 32'h0000000C 0
+force -freeze sim:/fu_fd/PoppedPC 32'h00000004 0
+force -freeze sim:/fu_fd/PCsrc 0 0
+force -freeze sim:/fu_fd/ChangePC 0 0
+force -freeze sim:/fu_fd/callRdst 32'h00000011 0
+run
+force -freeze sim:/fu_fd/StallCU 0 0
+force -freeze sim:/fu_fd/Reset 0 0
 run
 run
+run
+run
+run
+force -freeze sim:/fu_fd/PCsrc 1 0
+run
+force -freeze sim:/fu_fd/PCsrc 0 0
+force -freeze sim:/fu_fd/Flush 1 0
+force -freeze sim:/fu_fd/StallCU 1 0
+run
+force -freeze sim:/fu_fd/Flush 0 0
+force -freeze sim:/fu_fd/StallCU 0 0
 run

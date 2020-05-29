@@ -103,9 +103,9 @@ VoZZGK<0Vg=ae911^ji4^o0
 !s100 DzU<5mImOOmadglN>T=>D1
 R6
 32
-Z23 !s110 1590497595
+Z23 !s110 1590770435
 !i10b 1
-Z24 !s108 1590497595.000000
+Z24 !s108 1590770435.000000
 Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/execute/execute/hALU.vhd|
 Z26 !s107 C:/Users/Otrebor Azilab/Desktop/execute/execute/hALU.vhd|
 !i113 1
@@ -171,7 +171,7 @@ R30
 R11
 R12
 Ebuffer4
-Z31 w1590498006
+Z31 w1590716163
 R1
 R2
 R3
@@ -179,13 +179,13 @@ Z32 8C:/Users/Otrebor Azilab/Desktop/ArchReso/mem_wb_buffer/memWBbuffer.vhd
 Z33 FC:/Users/Otrebor Azilab/Desktop/ArchReso/mem_wb_buffer/memWBbuffer.vhd
 l0
 L4
-Vkmgdz5_Lfh2L]C<<Se39B0
-!s100 lkN7@JB?Ue_VLRWZEc6]h1
+VJ2QQEEF>2Y[7k=]^i_9m`0
+!s100 M?7C[AJ5O@H>bgMzc5DFO0
 R6
 32
-Z34 !s110 1590498010
+Z34 !s110 1590770436
 !i10b 1
-Z35 !s108 1590498010.000000
+Z35 !s108 1590770436.000000
 Z36 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/mem_wb_buffer/memWBbuffer.vhd|
 Z37 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/mem_wb_buffer/memWBbuffer.vhd|
 !i113 1
@@ -194,11 +194,11 @@ R12
 Aregarrch
 R1
 R2
-DEx4 work 7 buffer4 0 22 kmgdz5_Lfh2L]C<<Se39B0
+DEx4 work 7 buffer4 0 22 J2QQEEF>2Y[7k=]^i_9m`0
 l36
 L27
-VbMJLOc`H59zbboo470z`e0
-!s100 XTeT;ZU^PZ]moiKV0AcGd2
+VViZieU2Pb@0^W:>RaF6hl2
+!s100 9<canZ_YZI]dEX^z]h6lL2
 R6
 32
 R34
@@ -210,7 +210,7 @@ R37
 R11
 R12
 Ebufferr
-Z38 w1590453341
+Z38 w1590716192
 R1
 R2
 R3
@@ -218,54 +218,54 @@ Z39 8C:/Users/Otrebor Azilab/Desktop/ArchReso/buffer/buffer/EXtoMEMbuffer.vhd
 Z40 FC:/Users/Otrebor Azilab/Desktop/ArchReso/buffer/buffer/EXtoMEMbuffer.vhd
 l0
 L4
-VJ0O29eTRi1<gje^LRT7:H3
-!s100 ic7I1F;XTHDgV8B[=9U@n1
+VmdcHPhnMOJKziDbV<nMRX0
+!s100 DX^9jMQ@_ThlK=;W7L?Y;0
 R6
 32
-Z41 !s110 1590497784
+R34
 !i10b 1
-Z42 !s108 1590497784.000000
-Z43 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/buffer/buffer/EXtoMEMbuffer.vhd|
-Z44 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/buffer/buffer/EXtoMEMbuffer.vhd|
+R35
+Z41 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/buffer/buffer/EXtoMEMbuffer.vhd|
+Z42 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/buffer/buffer/EXtoMEMbuffer.vhd|
 !i113 1
 R11
 R12
 Abufferarch
 R1
 R2
-DEx4 work 7 bufferr 0 22 J0O29eTRi1<gje^LRT7:H3
+DEx4 work 7 bufferr 0 22 mdcHPhnMOJKziDbV<nMRX0
 l45
 L34
-V4a4MH3n;VE0G?mjDPB2?X3
-!s100 iWRLd52U1AoRL;jh19lQ62
+VBj``6Nn4aadBj;4IDE>P@0
+!s100 2@00RdaNF3g0ik4Ai>n632
 R6
 32
-R41
+R34
 !i10b 1
+R35
+R41
 R42
-R43
-R44
 !i113 1
 R11
 R12
 Eccrregister
-Z45 w1590285059
+Z43 w1590716079
 R1
 R2
 R3
-Z46 8C:/Users/Otrebor Azilab/Desktop/execute/execute/hCCR.vhd
-Z47 FC:/Users/Otrebor Azilab/Desktop/execute/execute/hCCR.vhd
+Z44 8C:/Users/Otrebor Azilab/Desktop/execute/execute/hCCR.vhd
+Z45 FC:/Users/Otrebor Azilab/Desktop/execute/execute/hCCR.vhd
 l0
 L4
 VG6M0jcGReggBoZc2jado[1
 !s100 L:=N:eS[XF3PFU<l:d84j1
 R6
 32
-Z48 !s110 1590497602
+R34
 !i10b 1
-Z49 !s108 1590497602.000000
-Z50 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/execute/execute/hCCR.vhd|
-Z51 !s107 C:/Users/Otrebor Azilab/Desktop/execute/execute/hCCR.vhd|
+R24
+Z46 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/execute/execute/hCCR.vhd|
+Z47 !s107 C:/Users/Otrebor Azilab/Desktop/execute/execute/hCCR.vhd|
 !i113 1
 R11
 R12
@@ -279,33 +279,33 @@ VSF=IbAK^Ka`JY7=9JiQ0I0
 !s100 f1K0I;2Q<[Q^ioTecc7]^3
 R6
 32
-R48
+R34
 !i10b 1
-R49
-R50
-R51
+R24
+R46
+R47
 !i113 1
 R11
 R12
 Econtrolunit
-Z52 w1590449171
+Z48 w1590767059
 R15
 R1
 R2
 R3
-Z53 8C:/Users/Otrebor Azilab/Desktop/Arch Project/ControlUnit.vhd
-Z54 FC:/Users/Otrebor Azilab/Desktop/Arch Project/ControlUnit.vhd
+Z49 8C:/Users/Otrebor Azilab/Desktop/Arch Project/ControlUnit.vhd
+Z50 FC:/Users/Otrebor Azilab/Desktop/Arch Project/ControlUnit.vhd
 l0
 L5
-VeNX4V5FmCj42Sk0o9b68i1
-!s100 E>H6^@Y[CAQ3eiN6h:]Pj2
+V:eWzXoJMY_@0`anm0k=6f0
+!s100 22HHE<j269WiSSXADKJFf2
 R6
 32
-Z55 !s110 1590449832
+Z51 !s110 1590770432
 !i10b 1
-Z56 !s108 1590449832.000000
-Z57 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch Project/ControlUnit.vhd|
-Z58 !s107 C:/Users/Otrebor Azilab/Desktop/Arch Project/ControlUnit.vhd|
+Z52 !s108 1590770432.000000
+Z53 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch Project/ControlUnit.vhd|
+Z54 !s107 C:/Users/Otrebor Azilab/Desktop/Arch Project/ControlUnit.vhd|
 !i113 1
 R11
 R12
@@ -313,40 +313,81 @@ Acontrolunit_arch
 R15
 R1
 R2
-DEx4 work 11 controlunit 0 22 eNX4V5FmCj42Sk0o9b68i1
-l26
+DEx4 work 11 controlunit 0 22 :eWzXoJMY_@0`anm0k=6f0
+l28
 L20
-Vj76Ki32bIgL8XXbUaSUOg1
-!s100 Tz?jl7Q[ccha[cHfJ]mB70
+VIz3XmP8]Td7FkMk6`OU^Q3
+!s100 MAzaz3X?YFkc8A9UNeGnh0
 R6
 32
-R55
+R51
 !i10b 1
-R56
-R57
-R58
+R52
+R53
+R54
 !i113 1
 R11
 R12
-Ecounter
-Z59 w1590417065
+Econtrolunit_v
+Z55 w1590763301
 R15
 R1
 R2
 R3
-Z60 8C:/Users/Otrebor Azilab/Desktop/Arch_Labs/Counter.vhd
-Z61 FC:/Users/Otrebor Azilab/Desktop/Arch_Labs/Counter.vhd
+Z56 8C:/Users/Otrebor Azilab/Desktop/Arch Project/ControlUnit_V.vhd
+Z57 FC:/Users/Otrebor Azilab/Desktop/Arch Project/ControlUnit_V.vhd
 l0
 L5
-VE6o5fm18fbhMZ6ae`a1Cg2
-!s100 Wh4AR5kk14Nn>lcdGCM?h1
+VL9oH1IV``joS[AbSRJQB]3
+!s100 n=B?fTB[LCMhc1;=@f^Xk3
 R6
 32
-R55
+Z58 !s110 1590770437
 !i10b 1
-R56
-Z62 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch_Labs/Counter.vhd|
-Z63 !s107 C:/Users/Otrebor Azilab/Desktop/Arch_Labs/Counter.vhd|
+Z59 !s108 1590770437.000000
+Z60 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch Project/ControlUnit_V.vhd|
+Z61 !s107 C:/Users/Otrebor Azilab/Desktop/Arch Project/ControlUnit_V.vhd|
+!i113 1
+R11
+R12
+Acontrolunit_v_arch
+R15
+R1
+R2
+DEx4 work 13 controlunit_v 0 22 L9oH1IV``joS[AbSRJQB]3
+l31
+L23
+V_l:2=IePmF0g6>gSaM`_a2
+!s100 iLHe?2KGDSfR1>6TZaFf40
+R6
+32
+R58
+!i10b 1
+R59
+R60
+R61
+!i113 1
+R11
+R12
+Ecounter
+Z62 w1590764193
+R15
+R1
+R2
+R3
+Z63 8C:/Users/Otrebor Azilab/Desktop/Arch_Labs/Counter.vhd
+Z64 FC:/Users/Otrebor Azilab/Desktop/Arch_Labs/Counter.vhd
+l0
+L5
+Vn4GX1UnzKF38^CSBS]i@m0
+!s100 iU6oIn^z7`hMZDUXloXP@0
+R6
+32
+R51
+!i10b 1
+R52
+Z65 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch_Labs/Counter.vhd|
+Z66 !s107 C:/Users/Otrebor Azilab/Desktop/Arch_Labs/Counter.vhd|
 !i113 1
 R11
 R12
@@ -354,23 +395,23 @@ Aarch
 R15
 R1
 R2
-DEx4 work 7 counter 0 22 E6o5fm18fbhMZ6ae`a1Cg2
+DEx4 work 7 counter 0 22 n4GX1UnzKF38^CSBS]i@m0
 l13
 L11
-VAe4OY[z0[KLje>U^<Vb:<1
-!s100 Bogj1mkTLL6@_L^31Ii]o3
+V`Lmb=z5>]?zjf;PBze1EQ0
+!s100 8UMOzG[njmJlWBE@XNG6P1
 R6
 32
-R55
+R51
 !i10b 1
-R56
-R62
-R63
+R52
+R65
+R66
 !i113 1
 R11
 R12
 Edecexbuffer
-Z64 w1590498639
+Z67 w1590716253
 R1
 R2
 R3
@@ -378,13 +419,13 @@ R27
 R28
 l0
 L4
-VAibz=3IB<o>gTlTcTiY<[2
-!s100 MIW@]FbbTJYNiDbbSJ7n82
+V<YT9ML>nUjimd3in=CZ6f2
+!s100 1GC>NXcUaVF2A^NVU2B0j3
 R6
 32
-Z65 !s110 1590498643
+R23
 !i10b 1
-Z66 !s108 1590498643.000000
+R24
 R29
 R30
 !i113 1
@@ -393,39 +434,39 @@ R12
 Areg_arrch
 R1
 R2
-DEx4 work 11 decexbuffer 0 22 Aibz=3IB<o>gTlTcTiY<[2
+DEx4 work 11 decexbuffer 0 22 <YT9ML>nUjimd3in=CZ6f2
 l47
 L37
-VJMU>?czEaQZE4JTfE2EW;3
-!s100 UfIY6mTRzOWA4z7M;gJ:U3
+VM2D>FDEjO?3;cKS?UEV1E1
+!s100 E>A;2W5:]_U:[Be2jC8Sd3
 R6
 32
-R65
+R23
 !i10b 1
-R66
+R24
 R29
 R30
 !i113 1
 R11
 R12
 Edecoder
-Z67 w1590365747
+Z68 w1590365747
 R1
 R2
 R3
-Z68 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/Decoder.vhd
-Z69 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/Decoder.vhd
+Z69 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/Decoder.vhd
+Z70 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/Decoder.vhd
 l0
 L4
 VfVK5eQ@=^I;A>mUgUH]NH2
 !s100 1T[@iVNleZL0=IObFUVM50
 R6
 32
-Z70 !s110 1590449834
+Z71 !s110 1590770434
 !i10b 1
-Z71 !s108 1590449834.000000
-Z72 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/Decoder.vhd|
-Z73 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/Decoder.vhd|
+Z72 !s108 1590770434.000000
+Z73 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/Decoder.vhd|
+Z74 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/Decoder.vhd|
 !i113 1
 R11
 R12
@@ -439,11 +480,11 @@ V]3XjnoW9AKAbkmJhkFzh_2
 !s100 CIB_LkkGkGFh@GUFc2@VY1
 R6
 32
-R70
-!i10b 1
 R71
+!i10b 1
 R72
 R73
+R74
 !i113 1
 R11
 R12
@@ -469,141 +510,141 @@ FC:/Users/Otrebor Azilab/Desktop/Arch_Labs/decoder.vhd
 w1582923566
 8C:/Users/Otrebor Azilab/Desktop/Arch_Labs/decoder.vhd
 Edecodingpart
-Z74 w1590409708
+Z75 w1590769634
 R1
 R2
 R3
-Z75 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/decodingpart.vhd
-Z76 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/decodingpart.vhd
+Z76 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/decodingpart.vhd
+Z77 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/decodingpart.vhd
 l0
 L4
-VY=PK`9LWg2LfK5SA]m2Ui0
-!s100 Lfa7hzTH^TOh4Xf`m_oPI2
+VNXRh67H7F]ZiF;ZGO8^773
+!s100 1OD7:?emTVfACg5_zOXaj0
 R6
 32
-R70
-!i10b 1
 R71
-Z77 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/decodingpart.vhd|
-Z78 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/decodingpart.vhd|
+!i10b 1
+R72
+Z78 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/decodingpart.vhd|
+Z79 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/decodingpart.vhd|
 !i113 1
 R11
 R12
 Astructr
 R1
 R2
-DEx4 work 12 decodingpart 0 22 Y=PK`9LWg2LfK5SA]m2Ui0
+DEx4 work 12 decodingpart 0 22 NXRh67H7F]ZiF;ZGO8^773
 l80
 L30
-Vcafk7eCW0Jc6[?Rifbg9I0
-!s100 mF9ZUhL29o]6;gFLITAWJ1
+V9@=]7D<1O059Sk9lXD>nG2
+!s100 :5@l65H[jm;8ILk2fmk0O2
 R6
 32
-R70
-!i10b 1
 R71
-R77
+!i10b 1
+R72
 R78
+R79
 !i113 1
 R11
 R12
 Eexecute
-Z79 w1590183289
+Z80 w1590632324
 R1
 R2
 R3
-Z80 8C:/Users/Otrebor Azilab/Desktop/execute/execute/hexecute.vhd
-Z81 FC:/Users/Otrebor Azilab/Desktop/execute/execute/hexecute.vhd
+Z81 8C:/Users/Otrebor Azilab/Desktop/execute/execute/hexecute.vhd
+Z82 FC:/Users/Otrebor Azilab/Desktop/execute/execute/hexecute.vhd
 l0
 L4
-V4Anml43K6LBa3Pj]ngBD=1
-!s100 7N2hhVmi]f_6TgnoD5i3Q3
+VfcXaXQEZfEc9Ghd;;7hiO1
+!s100 AQm0W[XgcHINUh_liKAH02
 R6
 32
-Z82 !s110 1590497193
+R23
 !i10b 1
-Z83 !s108 1590497193.000000
-Z84 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/execute/execute/hexecute.vhd|
-Z85 !s107 C:/Users/Otrebor Azilab/Desktop/execute/execute/hexecute.vhd|
+R24
+Z83 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/execute/execute/hexecute.vhd|
+Z84 !s107 C:/Users/Otrebor Azilab/Desktop/execute/execute/hexecute.vhd|
 !i113 1
 R11
 R12
 Astructexecute
 R1
 R2
-DEx4 work 7 execute 0 22 4Anml43K6LBa3Pj]ngBD=1
-l93
+DEx4 work 7 execute 0 22 fcXaXQEZfEc9Ghd;;7hiO1
+l82
 L19
-VW?NB^1fmLTMLXT;YLOfz:2
-!s100 F2W81moV4JB?oDAd@i@oK0
+VQQLYl=`1:ca@UoGmeMlY32
+!s100 Uz=W_9E^O?D7SBInSg23I0
 R6
 32
-R82
+R23
 !i10b 1
+R24
 R83
 R84
-R85
 !i113 1
 R11
 R12
 Efdbuffer
-Z86 w1589329893
+Z85 w1590716134
 R1
 R2
 R3
-Z87 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FDbuffer.vhd
-Z88 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FDbuffer.vhd
+Z86 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FDbuffer.vhd
+Z87 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FDbuffer.vhd
 l0
-L4
-VZzZW`UPi[e8<X4aXD:bf[0
-!s100 <VOAl4Fjk`60a^AJ`4SKX3
+L5
+Vz7EjiDGO4c?<:zJl<X_UL0
+!s100 0he=1FMmb9hh1U`SWlK2i2
 R6
 32
-R55
+Z88 !s110 1590770433
 !i10b 1
-R56
-Z89 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FDbuffer.vhd|
-Z90 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FDbuffer.vhd|
+Z89 !s108 1590770433.000000
+Z90 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FDbuffer.vhd|
+Z91 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FDbuffer.vhd|
 !i113 1
 R11
 R12
 Aarch_fdbuffer
 R1
 R2
-DEx4 work 8 fdbuffer 0 22 ZzZW`UPi[e8<X4aXD:bf[0
-l34
-L14
-VD6Ra_z5D4<Ug7ELDACNBW2
-!s100 8R<@FOAOUKEC5H`zK<[TR3
+DEx4 work 8 fdbuffer 0 22 z7EjiDGO4c?<:zJl<X_UL0
+l37
+L15
+VdO?TXnZ?fBc@aBF[8^WM>0
+!s100 U>hGHL9lloX@6Bi^MALNm1
 R6
 32
-R55
+R88
 !i10b 1
-R56
 R89
 R90
+R91
 !i113 1
 R11
 R12
 Efetchunit
-Z91 w1590459134
+Z92 w1590701530
 R15
 R1
 R2
 R3
-Z92 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FetchUnit.vhd
-Z93 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FetchUnit.vhd
+Z93 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FetchUnit.vhd
+Z94 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FetchUnit.vhd
 l0
 L5
-V60j0ZoD=G=XQkiZ@A]K370
-!s100 >L]d@5@APG@7[BhCd]M[c0
+VX00f>8a?h8DoOiKa453Om3
+!s100 emdRO1IKG`k3YX1QaTbSO0
 R6
 32
-Z94 !s110 1590459141
+R88
 !i10b 1
-Z95 !s108 1590459141.000000
-Z96 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FetchUnit.vhd|
-Z97 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FetchUnit.vhd|
+R89
+Z95 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FetchUnit.vhd|
+Z96 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FetchUnit.vhd|
 !i113 1
 R11
 R12
@@ -611,39 +652,39 @@ Afetchingunit
 R15
 R1
 R2
-DEx4 work 9 fetchunit 0 22 60j0ZoD=G=XQkiZ@A]K370
-l83
-L22
-VH@1lBa5T;15P;CCkM?b0d3
-!s100 CeE21XOmA`9_H49nPoP];3
+DEx4 work 9 fetchunit 0 22 X00f>8a?h8DoOiKa453Om3
+l80
+L18
+VnB4_[OiP2I52SKWDY<f;T0
+!s100 YS@N2F<?>Tz9[;@M?Lf[H3
 R6
 32
-R94
+R88
 !i10b 1
+R89
 R95
 R96
-R97
 !i113 1
 R11
 R12
 Eflushreg
-Z98 w1590458901
+Z97 w1590716211
 R1
 R2
 R3
-Z99 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FlushRegister.vhd
-Z100 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FlushRegister.vhd
+Z98 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FlushRegister.vhd
+Z99 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FlushRegister.vhd
 l0
 L4
 VAz<JL6NF6Pn:nTP`9Pe>h1
 !s100 _<Ni0JlCecT]dl?;[ZYRT3
 R6
 32
-Z101 !s110 1590458916
+R88
 !i10b 1
-Z102 !s108 1590458916.000000
-Z103 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FlushRegister.vhd|
-Z104 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FlushRegister.vhd|
+R89
+Z100 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FlushRegister.vhd|
+Z101 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FlushRegister.vhd|
 !i113 1
 R11
 R12
@@ -653,37 +694,76 @@ R2
 DEx4 work 8 flushreg 0 22 Az<JL6NF6Pn:nTP`9Pe>h1
 l11
 L10
-VThMaIgBL;k4jh[AG@1^Gi1
-!s100 S^O2RnJIef]^LPkCdRS7K0
+V4V^<dWDL?a3<76Zd@]gL?0
+!s100 4a20@X;X[afmfo@jdnl>n3
 R6
 32
-R101
+R88
 !i10b 1
-R102
-R103
-R104
+R89
+R100
+R101
+!i113 1
+R11
+R12
+Efu_fd
+Z102 w1590689018
+R1
+R2
+R3
+Z103 8C:/Users/Otrebor Azilab/Desktop/Arch Project/FU+FDbuffer.vhd
+Z104 FC:/Users/Otrebor Azilab/Desktop/Arch Project/FU+FDbuffer.vhd
+l0
+L4
+VZG:TJF=VeK;kPYnI_m26h2
+!s100 PP=@H5GkB9eg7ZDOQnEAh0
+R6
+32
+R34
+!i10b 1
+R35
+Z105 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch Project/FU+FDbuffer.vhd|
+Z106 !s107 C:/Users/Otrebor Azilab/Desktop/Arch Project/FU+FDbuffer.vhd|
+!i113 1
+R11
+R12
+Afu_fd_arch
+R1
+R2
+DEx4 work 5 fu_fd 0 22 ZG:TJF=VeK;kPYnI_m26h2
+l43
+L17
+V@9G8R9_CPQ18g6V9H8B]X1
+!s100 CBTfj=MK4`E90T5g9@0mW3
+R6
+32
+R34
+!i10b 1
+R35
+R105
+R106
 !i113 1
 R11
 R12
 Einstmemory
-Z105 w1590423515
+Z107 w1590720257
 R15
 R1
 R2
 R3
-Z106 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/InstructionMemory.vhd
-Z107 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/InstructionMemory.vhd
+Z108 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/InstructionMemory.vhd
+Z109 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/InstructionMemory.vhd
 l0
 L5
-Vh@h9BiEm=1:ei0JoQmG_43
-!s100 GO=1hRP6GHYA4;Agj7N;83
+Vik5FBZ@dI88TW3`@L_`Yz0
+!s100 i`XK?d2j=4Hd@R`cPF1363
 R6
 32
-R55
+R51
 !i10b 1
-R56
-Z108 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/InstructionMemory.vhd|
-Z109 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/InstructionMemory.vhd|
+R52
+Z110 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/InstructionMemory.vhd|
+Z111 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/InstructionMemory.vhd|
 !i113 1
 R11
 R12
@@ -691,28 +771,28 @@ Amem_arch
 R15
 R1
 R2
-DEx4 work 10 instmemory 0 22 h@h9BiEm=1:ei0JoQmG_43
-l17
-L14
-VTOG7=ShcbP<]1TnkcdeTV0
-!s100 IFVHj22RD7ZoU4=i2fQPT3
+DEx4 work 10 instmemory 0 22 ik5FBZ@dI88TW3`@L_`Yz0
+l16
+L13
+VZdS3DRDkg;Qe17MXN]HBR1
+!s100 c=OJEfBSDH?bb]O8SZ1Ed1
 R6
 32
-R55
+R51
 !i10b 1
-R56
-R108
-R109
+R52
+R110
+R111
 !i113 1
 R11
 R12
 Eintg
-Z110 w1583703769
+Z112 w1583703769
 R1
 R2
 R3
-Z111 8C:/Users/Otrebor Azilab/Desktop/Arch_Labs/integration.vhd
-Z112 FC:/Users/Otrebor Azilab/Desktop/Arch_Labs/integration.vhd
+Z113 8C:/Users/Otrebor Azilab/Desktop/Arch_Labs/integration.vhd
+Z114 FC:/Users/Otrebor Azilab/Desktop/Arch_Labs/integration.vhd
 l0
 L4
 V6CbLPGL>z8G=V5zPE1za63
@@ -722,8 +802,8 @@ R6
 R7
 !i10b 1
 R8
-Z113 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch_Labs/integration.vhd|
-Z114 !s107 C:/Users/Otrebor Azilab/Desktop/Arch_Labs/integration.vhd|
+Z115 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch_Labs/integration.vhd|
+Z116 !s107 C:/Users/Otrebor Azilab/Desktop/Arch_Labs/integration.vhd|
 !i113 1
 R11
 R12
@@ -740,27 +820,27 @@ R6
 R7
 !i10b 1
 R8
-R113
-R114
+R115
+R116
 !i113 1
 R11
 R12
 Eloayregister
-Z115 w1584558381
+Z117 w1590581790
 R1
 R2
 R3
-Z116 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/register.vhd
-Z117 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/register.vhd
+Z118 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/register.vhd
+Z119 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/register.vhd
 l0
 L4
-VJ2lziImJm^]UKo^_Y5_`j2
-!s100 ]H[1WU`OcV9XhNYK3aW2k1
+VcjG5hBl<KWeoQF4KX7`aX1
+!s100 l^<F<8TL3ni?A3Y1JP@T63
 R6
 32
-Z118 !s110 1590449833
+R71
 !i10b 1
-Z119 !s108 1590449833.000000
+R89
 Z120 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/register.vhd|
 Z121 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/register.vhd|
 !i113 1
@@ -769,16 +849,16 @@ R12
 Areg_arch
 R1
 R2
-DEx4 work 12 loayregister 0 22 J2lziImJm^]UKo^_Y5_`j2
+DEx4 work 12 loayregister 0 22 cjG5hBl<KWeoQF4KX7`aX1
 l12
 L11
 Viio_XI9;Ta4J;O@e;5j3o3
 !s100 VS[K5JiKZ]2:GMTPhhIDC3
 R6
 32
-R118
+R71
 !i10b 1
-R119
+R89
 R120
 R121
 !i113 1
@@ -797,11 +877,11 @@ V;3DIVj3bJVW:`PbG1]c1V1
 !s100 e9JdO;56@9<4JTbnRH7RD1
 R6
 32
-Z125 !s110 1590497585
+R34
 !i10b 1
-Z126 !s108 1590497585.000000
-Z127 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch Project/fallingReg.vhd|
-Z128 !s107 C:/Users/Otrebor Azilab/Desktop/Arch Project/fallingReg.vhd|
+R35
+Z125 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch Project/fallingReg.vhd|
+Z126 !s107 C:/Users/Otrebor Azilab/Desktop/Arch Project/fallingReg.vhd|
 !i113 1
 R11
 R12
@@ -815,33 +895,72 @@ VUT3>Xf2c9b06HZdDn6Xi00
 !s100 k0QbKR7Aanec<5f`a2dGT3
 R6
 32
-R125
+R34
 !i10b 1
+R35
+R125
 R126
-R127
-R128
+!i113 1
+R11
+R12
+Eloayregisternoclk
+Z127 w1590755572
+R1
+R2
+R3
+Z128 8C:/Users/Otrebor Azilab/Desktop/Arch Project/registerNoClk.vhd
+Z129 FC:/Users/Otrebor Azilab/Desktop/Arch Project/registerNoClk.vhd
+l0
+L5
+Vi@`mTb>>5;NnoEjiBk:W33
+!s100 ^ZQMeYAYVK>=0QZDmH^l_0
+R6
+32
+R34
+!i10b 1
+R35
+Z130 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch Project/registerNoClk.vhd|
+Z131 !s107 C:/Users/Otrebor Azilab/Desktop/Arch Project/registerNoClk.vhd|
+!i113 1
+R11
+R12
+Areg_arch
+R1
+R2
+DEx4 work 17 loayregisternoclk 0 22 i@`mTb>>5;NnoEjiBk:W33
+l13
+L12
+VB4K`j^MFm>QHA@A=U2C562
+!s100 E@;=Ti^G23Rc1bD@bgkJ@1
+R6
+32
+R34
+!i10b 1
+R35
+R130
+R131
 !i113 1
 R11
 R12
 Emem
-Z129 w1590423697
+Z132 w1590716093
 R15
 R1
 R2
 R3
-Z130 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/DataMemory.vhd
-Z131 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/DataMemory.vhd
+Z133 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/DataMemory.vhd
+Z134 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/DataMemory.vhd
 l0
 L5
 Vi3Scfzg2OaD5C=7zRV01I1
 !s100 5DzkzK_9I:JiW8QgH?8963
 R6
 32
-R55
+R88
 !i10b 1
-R56
-Z132 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/DataMemory.vhd|
-Z133 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/DataMemory.vhd|
+R89
+Z135 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/DataMemory.vhd|
+Z136 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/DataMemory.vhd|
 !i113 1
 R11
 R12
@@ -852,75 +971,75 @@ R2
 DEx4 work 3 mem 0 22 i3Scfzg2OaD5C=7zRV01I1
 l15
 L12
-VN^_ZPkB`a7YF3:^7i@oJ13
-!s100 k@808jBAkTY:@1=LDLnhc3
+V82Di3:X[DQJ56`>o<3eNI1
+!s100 323bn7F7o?oW1XOJmoAi=3
 R6
 32
-R55
+R88
 !i10b 1
-R56
-R132
-R133
+R89
+R135
+R136
 !i113 1
 R11
 R12
 Ememorystage
-Z134 w1589495723
+Z137 w1590617743
 R1
 R2
 R3
-Z135 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/memorystage.vhd
-Z136 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/memorystage.vhd
+Z138 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/memorystage.vhd
+Z139 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/memorystage.vhd
 l0
 L5
-Vaj>gdHnj]5NFVFZ6IB0JU1
-!s100 =5Pi<dOGLYd8OC1F1a52]3
+VkoEeWAB:[6MA8nP8ZaR593
+!s100 2a9nBe_1XSMYnf696DSJF2
 R6
 32
-R118
+R71
 !i10b 1
-R119
-Z137 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/memorystage.vhd|
-Z138 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/memorystage.vhd|
+R72
+Z140 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/memorystage.vhd|
+Z141 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/memorystage.vhd|
 !i113 1
 R11
 R12
 Aarchmm
 R1
 R2
-DEx4 work 11 memorystage 0 22 aj>gdHnj]5NFVFZ6IB0JU1
-l64
+DEx4 work 11 memorystage 0 22 koEeWAB:[6MA8nP8ZaR593
+l72
 L30
-VYIgkbZ_b^3TRTImN[fG<23
-!s100 V`h^jLYoV@Um;ZC^]k6Uz3
+V<jBUE]235ZaWUP82djFDo2
+!s100 0o^7iScVQ<Hjz[;EDDQR02
 R6
 32
-R118
+R71
 !i10b 1
-R119
-R137
-R138
+R72
+R140
+R141
 !i113 1
 R11
 R12
 Emux1
-Z139 w1589223217
+Z142 w1589223217
 R1
 R2
 R3
-Z140 8C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1.vhd
-Z141 FC:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1.vhd
+Z143 8C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1.vhd
+Z144 FC:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1.vhd
 l0
 L3
 VkIZCMj63NFWhCmCb4Z6[U1
 !s100 YNT=mg[RZ43E:lT;5DjWM0
 R6
 32
-Z142 !s110 1590449836
+R23
 !i10b 1
-Z143 !s108 1590449836.000000
-Z144 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1.vhd|
-Z145 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1.vhd|
+R24
+Z145 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1.vhd|
+Z146 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1.vhd|
 !i113 1
 R11
 R12
@@ -934,32 +1053,32 @@ VL2gANKUIoSWO:KbWHmBc50
 !s100 6^0A=l:NTDa4V996^Y4DE1
 R6
 32
-R142
+R23
 !i10b 1
-R143
-R144
+R24
 R145
+R146
 !i113 1
 R11
 R12
 Emux2
-Z146 w1589379303
+Z147 w1589379303
 R1
 R2
 R3
-Z147 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux2.vhd
-Z148 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux2.vhd
+Z148 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux2.vhd
+Z149 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux2.vhd
 l0
 L4
 VWEbjzUQ?z9OD>dz9RhO_j2
 !s100 UY;Dl]XnIeQEiP^c6I@;c0
 R6
 32
-R70
-!i10b 1
 R71
-Z149 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux2.vhd|
-Z150 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux2.vhd|
+!i10b 1
+R72
+Z150 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux2.vhd|
+Z151 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux2.vhd|
 !i113 1
 R11
 R12
@@ -973,11 +1092,11 @@ V8HYoKT]a1>;>oRRD5U?E_3
 !s100 3hM3ITL0NEFAMmY[BICKW2
 R6
 32
-R70
-!i10b 1
 R71
-R149
+!i10b 1
+R72
 R150
+R151
 !i113 1
 R11
 R12
@@ -1003,23 +1122,23 @@ FC:/Users/Otrebor Azilab/Desktop/execute/execute/hmux2.vhd
 w1589314341
 8C:/Users/Otrebor Azilab/Desktop/execute/execute/hmux2.vhd
 Emux4
-Z151 w1589287613
+Z152 w1589287613
 R1
 R2
 R3
-Z152 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux4.vhd
-Z153 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux4.vhd
+Z153 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux4.vhd
+Z154 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux4.vhd
 l0
 L4
 VkUmnWo@Tlb1R>NKY5_YjY2
 !s100 InnN<mDCETdgM0f^98W3[2
 R6
 32
-Z154 !s110 1590449835
+R71
 !i10b 1
-Z155 !s108 1590449835.000000
-Z156 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux4.vhd|
-Z157 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux4.vhd|
+R72
+Z155 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux4.vhd|
+Z156 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux4.vhd|
 !i113 1
 R11
 R12
@@ -1033,32 +1152,32 @@ V;_:=b<oj^WD_zJdFbieAA0
 !s100 =Y`78O5JHZ1jQz^E97Umb1
 R6
 32
-R154
+R71
 !i10b 1
+R72
 R155
 R156
-R157
 !i113 1
 R11
 R12
 Emux4x1
-Z158 w1589933425
+Z157 w1589933425
 R1
 R2
 R3
-Z159 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/Mux4x1.vhd
-Z160 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/Mux4x1.vhd
+Z158 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/Mux4x1.vhd
+Z159 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/Mux4x1.vhd
 l0
 L4
 VGf4XfQ>da_;DQV6aXJShX3
 !s100 <]a<h^UoZEDTXS`2>N6Q;3
 R6
 32
-R118
+R88
 !i10b 1
-R119
-Z161 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/Mux4x1.vhd|
-Z162 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/Mux4x1.vhd|
+R89
+Z160 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/Mux4x1.vhd|
+Z161 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/Mux4x1.vhd|
 !i113 1
 R11
 R12
@@ -1072,32 +1191,32 @@ V[iDocC]zid2IiROQGGc@00
 !s100 RGfUIAOQh2Og]SCEPkdR_0
 R6
 32
-R118
+R88
 !i10b 1
-R119
+R89
+R160
 R161
-R162
 !i113 1
 R11
 R12
 Emux4x11
-Z163 w1590171542
+Z162 w1590171542
 R1
 R2
 R3
-Z164 8C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1bit4x1.vhd
-Z165 FC:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1bit4x1.vhd
+Z163 8C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1bit4x1.vhd
+Z164 FC:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1bit4x1.vhd
 l0
 L4
 Vog1BkcCLPlRXofB5zbozT1
 !s100 Po?RjUX?z56T7MzE7;R_^2
 R6
 32
-R142
+R23
 !i10b 1
-R143
-Z166 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1bit4x1.vhd|
-Z167 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1bit4x1.vhd|
+R24
+Z165 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1bit4x1.vhd|
+Z166 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1bit4x1.vhd|
 !i113 1
 R11
 R12
@@ -1111,32 +1230,32 @@ V=DozG5=XWH`ZW^N[OTW7H3
 !s100 l8=0]ahVEC<2EASOPh]_^2
 R6
 32
-R142
+R23
 !i10b 1
-R143
+R24
+R165
 R166
-R167
 !i113 1
 R11
 R12
 Emy_adder
-Z168 w1577357456
+Z167 w1577357456
 R1
 R2
 R3
-Z169 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/OneBitFA.vhd
-Z170 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/OneBitFA.vhd
+Z168 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/OneBitFA.vhd
+Z169 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/OneBitFA.vhd
 l0
 L4
 VFjlMaf=9aFlNWPMnMXH?k3
 !s100 A5lJZfMh@V_I]hj`4ZSML1
 R6
 32
-R118
+R88
 !i10b 1
-R119
-Z171 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/OneBitFA.vhd|
-Z172 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/OneBitFA.vhd|
+R89
+Z170 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/OneBitFA.vhd|
+Z171 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/OneBitFA.vhd|
 !i113 1
 R11
 R12
@@ -1150,32 +1269,32 @@ VXB13Uk=o2`bT<MS3>SS=21
 !s100 Kk9FND9zikKz?6YeolNXL0
 R6
 32
-R118
+R88
 !i10b 1
-R119
+R89
+R170
 R171
-R172
 !i113 1
 R11
 R12
 Emy_nadder
-Z173 w1577358062
+Z172 w1577358062
 R1
 R2
 R3
-Z174 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/N-BitFA.vhd
-Z175 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/N-BitFA.vhd
+Z173 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/N-BitFA.vhd
+Z174 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/N-BitFA.vhd
 l0
 L4
 VDndA:EJ::fznDgz_=@PdY1
 !s100 C7d:4gZX8G=LHmF?31H?I1
 R6
 32
-R118
+R88
 !i10b 1
-R119
-Z176 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/N-BitFA.vhd|
-Z177 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/N-BitFA.vhd|
+R89
+Z175 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/N-BitFA.vhd|
+Z176 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/N-BitFA.vhd|
 !i113 1
 R11
 R12
@@ -1189,32 +1308,32 @@ VmRP^Y9[EG1;<QUJ@JMQo=1
 !s100 kj4NfXWLKH`SUaGb6Vo212
 R6
 32
-R118
+R88
 !i10b 1
-R119
+R89
+R175
 R176
-R177
 !i113 1
 R11
 R12
 Eparta
-Z178 w1577360374
+Z177 w1577360374
 R1
 R2
 R3
-Z179 8C:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartA.vhd
-Z180 FC:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartA.vhd
+Z178 8C:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartA.vhd
+Z179 FC:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartA.vhd
 l0
 L4
 VVm<lPL5HCGRQiXg4T`g772
 !s100 [MSTHM:YVAN^<3?BCJl;i1
 R6
 32
-Z181 !s110 1589307797
+Z180 !s110 1589307797
 !i10b 1
-Z182 !s108 1589307797.000000
-Z183 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartA.vhd|
-Z184 !s107 C:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartA.vhd|
+Z181 !s108 1589307797.000000
+Z182 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartA.vhd|
+Z183 !s107 C:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartA.vhd|
 !i113 1
 R11
 R12
@@ -1228,32 +1347,32 @@ Vh1?C51dd2<bNPPT1_6]0L0
 !s100 :^mfD82TgNfIa8dhzzLK`2
 R6
 32
-R181
+R180
 !i10b 1
+R181
 R182
 R183
-R184
 !i113 1
 R11
 R12
 Epartb
-Z185 w1577329084
+Z184 w1577329084
 R1
 R2
 R3
-Z186 8C:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartD.vhd
-Z187 FC:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartD.vhd
+Z185 8C:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartD.vhd
+Z186 FC:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartD.vhd
 l0
 L4
 VITI`Z;XzLNK[4TAPj2Y7Y1
 !s100 =c]dPkiz7HWG[Zc2T<fT`1
 R6
 32
-R181
+R180
 !i10b 1
-R182
-Z188 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartD.vhd|
-Z189 !s107 C:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartD.vhd|
+R181
+Z187 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartD.vhd|
+Z188 !s107 C:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartD.vhd|
 !i113 1
 R11
 R12
@@ -1267,11 +1386,11 @@ Vod>nE^I0KI1K>h5VES^EU0
 !s100 3aV2E]3zWh=L:?27S3@g92
 R6
 32
-R181
+R180
 !i10b 1
-R182
+R181
+R187
 R188
-R189
 !i113 1
 R11
 R12
@@ -1285,9 +1404,9 @@ VfIbF04SSekI7`g2W9ZK@_0
 !s100 [c=18FV73:5WQBVi`LnkI3
 R6
 32
-R181
+R180
 !i10b 1
-R182
+R181
 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartB.vhd|
 !s107 C:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartB.vhd|
 !i113 1
@@ -1297,63 +1416,63 @@ FC:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartB.vhd
 w1577329034
 8C:/Users/Otrebor Azilab/Desktop/Arch_Labs/PartB.vhd
 Epc_reg
-Z190 w1589334167
+Z189 w1590684579
 R1
 R2
 R3
-Z191 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/PC.vhd
-Z192 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/PC.vhd
+Z190 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/PC.vhd
+Z191 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/PC.vhd
 l0
 L4
-VBkg;^=?2]YhL;znXki2nO0
-!s100 ?UJfH6E4O9WQAKOFUWPU^0
+Vb99XT`bNFc6GgX`6^18DX3
+!s100 `O1^ZncgcD17PZSc1SOcL3
 R6
 32
-Z193 !s110 1590458819
+R88
 !i10b 1
-Z194 !s108 1590458819.000000
-Z195 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/PC.vhd|
-Z196 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/PC.vhd|
+R89
+Z192 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/PC.vhd|
+Z193 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/PC.vhd|
 !i113 1
 R11
 R12
 Apc_arch
 R1
 R2
-DEx4 work 6 pc_reg 0 22 Bkg;^=?2]YhL;znXki2nO0
+DEx4 work 6 pc_reg 0 22 b99XT`bNFc6GgX`6^18DX3
 l13
 L12
 VI49jn6fIB46?zGN>2YDCm0
 !s100 FbW9cPRU877QEVZ`e_j0>3
 R6
 32
-R193
+R88
 !i10b 1
-R194
-R195
-R196
+R89
+R192
+R193
 !i113 1
 R11
 R12
 Eram
-Z197 w1589325300
+Z194 w1589325300
 R15
 R1
 R2
 R3
-Z198 8C:/intelFPGA/18.0/ram2.vhd
-Z199 FC:/intelFPGA/18.0/ram2.vhd
+Z195 8C:/intelFPGA/18.0/ram2.vhd
+Z196 FC:/intelFPGA/18.0/ram2.vhd
 l0
 L5
 Vo@:K;JFab3co_0`J2WiPA0
 !s100 V0iC`nS9KiiVEObPcmQ7_1
 R6
 32
-Z200 !s110 1589325305
+Z197 !s110 1589325305
 !i10b 1
-Z201 !s108 1589325305.000000
-Z202 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/intelFPGA/18.0/ram2.vhd|
-Z203 !s107 C:/intelFPGA/18.0/ram2.vhd|
+Z198 !s108 1589325305.000000
+Z199 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/intelFPGA/18.0/ram2.vhd|
+Z200 !s107 C:/intelFPGA/18.0/ram2.vhd|
 !i113 1
 R11
 R12
@@ -1368,32 +1487,32 @@ V>M6M?ZZ?Vfg59]2T?:mM63
 !s100 G=IzI0;<m:8U3az`l?;ef2
 R6
 32
-R200
+R197
 !i10b 1
-R201
-R202
-R203
+R198
+R199
+R200
 !i113 1
 R11
 R12
 Ereg_file
-Z204 w1584622783
+Z201 w1584622783
 R1
 R2
 R3
-Z205 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/reg_file.vhd
-Z206 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/reg_file.vhd
+Z202 8C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/reg_file.vhd
+Z203 FC:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/reg_file.vhd
 l0
 L4
 VO4RbV<RAdHVKUUL_mOi<Z0
 !s100 aWG5@7hSBg4[EAfmM?@bn2
 R6
 32
-R118
+Z204 !s110 1590449833
 !i10b 1
-R119
-Z207 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/reg_file.vhd|
-Z208 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/reg_file.vhd|
+Z205 !s108 1590449833.000000
+Z206 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/reg_file.vhd|
+Z207 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/reg_file.vhd|
 !i113 1
 R11
 R12
@@ -1407,32 +1526,32 @@ VLT`P@kIFPS5@DZ4DCPmJo3
 !s100 nEob<f7Z]Ni^7z8@P]>142
 R6
 32
-R118
+R204
 !i10b 1
-R119
+R205
+R206
 R207
-R208
 !i113 1
 R11
 R12
 Eregi3
-Z209 w1589514668
+Z208 w1589514668
 R1
 R2
 R3
-Z210 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/mem_wb_buffer/regs3.vhd
-Z211 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/mem_wb_buffer/regs3.vhd
+Z209 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/mem_wb_buffer/regs3.vhd
+Z210 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/mem_wb_buffer/regs3.vhd
 l0
 L4
 Va;J?4A9]R4fdeL0zmY_RY1
 !s100 jnJ@mmL?da]THYHZ14=dS1
 R6
 32
-R70
+Z211 !s110 1590588986
 !i10b 1
-R71
-Z212 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/mem_wb_buffer/regs3.vhd|
-Z213 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/mem_wb_buffer/regs3.vhd|
+Z212 !s108 1590588986.000000
+Z213 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/mem_wb_buffer/regs3.vhd|
+Z214 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/mem_wb_buffer/regs3.vhd|
 !i113 1
 R11
 R12
@@ -1446,32 +1565,32 @@ V8Ydibb?=o44]>mYbdmQVM2
 !s100 Jed0m<[QU9lo938WELdh]3
 R6
 32
-R70
+R211
 !i10b 1
-R71
 R212
 R213
+R214
 !i113 1
 R11
 R12
 Eregis32
-Z214 w1589514645
+Z215 w1589514645
 R1
 R2
 R3
-Z215 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/mem_wb_buffer/regs32.vhd
-Z216 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/mem_wb_buffer/regs32.vhd
+Z216 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/mem_wb_buffer/regs32.vhd
+Z217 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/mem_wb_buffer/regs32.vhd
 l0
 L4
 VZ839a?HI?nK]4GAH:jfn12
 !s100 @iZINDXfcTL70L8?PHRYR0
 R6
 32
-R70
+Z218 !s110 1590449834
 !i10b 1
-R71
-Z217 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/mem_wb_buffer/regs32.vhd|
-Z218 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/mem_wb_buffer/regs32.vhd|
+Z219 !s108 1590449834.000000
+Z220 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/mem_wb_buffer/regs32.vhd|
+Z221 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/mem_wb_buffer/regs32.vhd|
 !i113 1
 R11
 R12
@@ -1485,32 +1604,32 @@ Vh72Y?`U_<QZ30M`@8;2Ac2
 !s100 T7;zDc4QA0NfEF]jRLYT>0
 R6
 32
-R70
-!i10b 1
-R71
-R217
 R218
+!i10b 1
+R219
+R220
+R221
 !i113 1
 R11
 R12
 Eregister4
-Z219 w1589512791
+Z222 w1589512791
 R1
 R2
 R3
-Z220 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decode_exe_buffer/reg4bit.vhd
-Z221 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decode_exe_buffer/reg4bit.vhd
+Z223 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decode_exe_buffer/reg4bit.vhd
+Z224 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decode_exe_buffer/reg4bit.vhd
 l0
 L4
 VdQG0ZGWaVbKi?OZaMKE=[0
 !s100 SkZ^`I<N_G;OJ^fO71jTQ3
 R6
 32
-R154
+Z225 !s110 1590449835
 !i10b 1
-R155
-Z222 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decode_exe_buffer/reg4bit.vhd|
-Z223 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decode_exe_buffer/reg4bit.vhd|
+Z226 !s108 1590449835.000000
+Z227 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decode_exe_buffer/reg4bit.vhd|
+Z228 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decode_exe_buffer/reg4bit.vhd|
 !i113 1
 R11
 R12
@@ -1524,32 +1643,32 @@ VQ5g6HdlnO:6cRP;jE=@7W2
 !s100 8i2YNTz_eQ0[M`]dc7I9h1
 R6
 32
-R154
+R225
 !i10b 1
-R155
-R222
-R223
+R226
+R227
+R228
 !i113 1
 R11
 R12
 Eregsfile
-Z224 w1590497552
+Z229 w1590716041
 R1
 R2
 R3
-Z225 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/regsfile.vhd
-Z226 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/regsfile.vhd
+Z230 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/regsfile.vhd
+Z231 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/regsfile.vhd
 l0
 L4
 V;iZ8eV[fz1X`]QD:G6N9m1
 !s100 AS2^hf5FRzD>imo;`L9eG2
 R6
 32
-Z227 !s110 1590497589
+R51
 !i10b 1
-Z228 !s108 1590497588.000000
-Z229 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/regsfile.vhd|
-Z230 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/regsfile.vhd|
+R52
+Z232 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/regsfile.vhd|
+Z233 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/regsfile.vhd|
 !i113 1
 R11
 R12
@@ -1557,116 +1676,217 @@ Astruct
 R1
 R2
 DEx4 work 8 regsfile 0 22 ;iZ8eV[fz1X`]QD:G6N9m1
-l62
+l71
 L21
-VL62LURjKn3hE9n5ZnB:3K3
-!s100 C:MFM?0PSB:XMhO>b6Hd>2
+VbChUFeL>BjY6K5@;d:km20
+!s100 @[WbXB7;A]b5TKlTfAQ8]0
 R6
 32
-R227
+R51
 !i10b 1
-R228
-R229
-R230
+R52
+R232
+R233
 !i113 1
 R11
 R12
 Erisc_processor
-Z231 w1590452802
+Z234 w1590769395
 R1
 R2
 R3
-Z232 8C:/Users/Otrebor Azilab/Desktop/Arch Project/RISC.vhd
-Z233 FC:/Users/Otrebor Azilab/Desktop/Arch Project/RISC.vhd
+Z235 8C:/Users/Otrebor Azilab/Desktop/Arch Project/RISC.vhd
+Z236 FC:/Users/Otrebor Azilab/Desktop/Arch Project/RISC.vhd
 l0
 L4
-VTNklLPoZHMD=AIQEkBk;j3
-!s100 oF1c[3KLO7^f3N@Yh75F71
+V>J@1m=3UD32JY]zImO[9?2
+!s100 XBT_gffoHPaXf?3EBJ@DX0
 R6
 32
-Z234 !s110 1590452806
+R58
 !i10b 1
-Z235 !s108 1590452806.000000
-Z236 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch Project/RISC.vhd|
-Z237 !s107 C:/Users/Otrebor Azilab/Desktop/Arch Project/RISC.vhd|
+R59
+Z237 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch Project/RISC.vhd|
+Z238 !s107 C:/Users/Otrebor Azilab/Desktop/Arch Project/RISC.vhd|
 !i113 1
 R11
 R12
 Arisc_processor_arch
 R1
 R2
-DEx4 work 14 risc_processor 0 22 TNklLPoZHMD=AIQEkBk;j3
-l17
-L13
-VcRGhY0ho>AGz^1<J2_G]W1
-!s100 8aBcUf5PBR61lBbkPHm2i3
+Z239 DEx4 work 14 risc_processor 0 22 >J@1m=3UD32JY]zImO[9?2
+l305
+L14
+VV@3]32n1i]OhA2JH?QAd^0
+!s100 k7[PVF8[8zM[=2bUO?NYb0
 R6
 32
-R234
+R58
 !i10b 1
-R235
-R236
+R59
 R237
+R238
+!i113 1
+R11
+R12
+Erisc_processor_v
+Z240 w1590764268
+R15
+R1
+R2
+R3
+Z241 8C:/Users/Otrebor Azilab/Desktop/Arch Project/RISC_V.vhd
+Z242 FC:/Users/Otrebor Azilab/Desktop/Arch Project/RISC_V.vhd
+l0
+L5
+Vm^GEjF5bi`J_RA]=RNdW71
+!s100 Ho>^Y>khajDmY`YVNZkWG0
+R6
+32
+R34
+!i10b 1
+R35
+Z243 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch Project/RISC_V.vhd|
+Z244 !s107 C:/Users/Otrebor Azilab/Desktop/Arch Project/RISC_V.vhd|
+!i113 1
+R11
+R12
+Arisc_processorv_arch
+R15
+R1
+R2
+DEx4 work 16 risc_processor_v 0 22 m^GEjF5bi`J_RA]=RNdW71
+l319
+L15
+V6ga7BZiA:gle7`6QDQ`m83
+!s100 diEMg79=0nSXk:Z1EE^fG0
+R6
+32
+R34
+!i10b 1
+R35
+R243
+R244
+!i113 1
+R11
+R12
+Espadderandregister
+w1590616825
+R1
+R2
+R3
+Z245 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/stackadder.vhd
+Z246 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/stackadder.vhd
+l0
+L4
+VT8N@XRFkRV5=PVD?5gQ6b2
+!s100 EVm`mkYD@kLiRY4V1KM0o0
+R6
+32
+!s110 1590616828
+!i10b 1
+!s108 1590616828.000000
+Z247 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/stackadder.vhd|
+Z248 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/stackadder.vhd|
+!i113 1
+R11
+R12
+Espregister
+Z249 w1590617219
+R1
+R2
+R3
+Z250 8C:/Users/Otrebor Azilab/Desktop/Arch Project/spRegister.vhd
+Z251 FC:/Users/Otrebor Azilab/Desktop/Arch Project/spRegister.vhd
+l0
+L4
+VYzjlK4TdC5=Z=SC1PFN[03
+!s100 4IGS_Z<FNAYcG6]6dSlUF1
+R6
+32
+R34
+!i10b 1
+R35
+Z252 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch Project/spRegister.vhd|
+Z253 !s107 C:/Users/Otrebor Azilab/Desktop/Arch Project/spRegister.vhd|
+!i113 1
+R11
+R12
+Areg_arch
+R1
+R2
+DEx4 work 10 spregister 0 22 YzjlK4TdC5=Z=SC1PFN[03
+l12
+L11
+V2SImh@lW>kFbIL5e5FC;@0
+!s100 LO;LSllGi43_6jPBDk@PV2
+R6
+32
+R34
+!i10b 1
+R35
+R252
+R253
 !i113 1
 R11
 R12
 Estadder
-Z238 w1589496067
+Z254 w1590617603
 R1
 R2
 R3
-Z239 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/stackadder.vhd
-Z240 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/stackadder.vhd
+R245
+R246
 l0
 L4
-VWIOCcn4UW]0;eG6F]2UW42
-!s100 gPcPQ<P^oR1Kk[k5G^CTk3
+VDEloPTBmLRGWURlo46UMn0
+!s100 [UG3XEgWL0Kk``Ea4hX]Y3
 R6
 32
-R70
-!i10b 1
 R71
-Z241 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/stackadder.vhd|
-Z242 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/stackadder.vhd|
+!i10b 1
+R72
+R247
+R248
 !i113 1
 R11
 R12
 Aarchst
 R1
 R2
-DEx4 work 7 stadder 0 22 WIOCcn4UW]0;eG6F]2UW42
-l33
-L13
-VQeFOUfGESO54DB2PKlb>N1
-!s100 =e6TXzbQ5^HlQ4<z@OLAN1
+DEx4 work 7 stadder 0 22 DEloPTBmLRGWURlo46UMn0
+l28
+L12
+Vda:PKUj=;]]GI9:UfWenM0
+!s100 PAOKKCg;Q7gC>2SmD4K480
 R6
 32
-R70
-!i10b 1
 R71
-R241
-R242
+!i10b 1
+R72
+R247
+R248
 !i113 1
 R11
 R12
 Etri_buffer
-Z243 w1584544069
+Z255 w1584544069
 R1
 R2
 R3
-Z244 8C:/Users/Otrebor Azilab/Desktop/Arch_Labs/tri_buffer.vhd
-Z245 FC:/Users/Otrebor Azilab/Desktop/Arch_Labs/tri_buffer.vhd
+Z256 8C:/Users/Otrebor Azilab/Desktop/Arch_Labs/tri_buffer.vhd
+Z257 FC:/Users/Otrebor Azilab/Desktop/Arch_Labs/tri_buffer.vhd
 l0
 L4
 VnER5NT[`lS0IhYS@ZGRC_3
 !s100 5bO^WjDDcJneKi[Y2o8Gl1
 R6
 32
-R181
+R180
 !i10b 1
-R182
-Z246 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch_Labs/tri_buffer.vhd|
-Z247 !s107 C:/Users/Otrebor Azilab/Desktop/Arch_Labs/tri_buffer.vhd|
+R181
+Z258 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/Arch_Labs/tri_buffer.vhd|
+Z259 !s107 C:/Users/Otrebor Azilab/Desktop/Arch_Labs/tri_buffer.vhd|
 !i113 1
 R11
 R12
@@ -1680,32 +1900,32 @@ VbZ8Tz6^GCPo2U_J4e85[h3
 !s100 Ob;i]XYUVV8zYg?XgaULG1
 R6
 32
-R181
+R180
 !i10b 1
-R182
-R246
-R247
+R181
+R258
+R259
 !i113 1
 R11
 R12
 Ezeroextend
-Z248 w1589224031
+Z260 w1589224031
 R1
 R2
 R3
-Z249 8C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/zeroextend.vhd
-Z250 FC:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/zeroextend.vhd
+Z261 8C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/zeroextend.vhd
+Z262 FC:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/zeroextend.vhd
 l0
 L3
 VkYBX?8OY^kXoV`CLGao9d2
 !s100 UlICZ?0QfhL4I533kn_:z3
 R6
 32
-R142
+R23
 !i10b 1
-R143
-Z251 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/zeroextend.vhd|
-Z252 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/zeroextend.vhd|
+R24
+Z263 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/zeroextend.vhd|
+Z264 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/zeroextend.vhd|
 !i113 1
 R11
 R12
@@ -1719,32 +1939,32 @@ VXfYO9Mm3VR:z9f[UAYQ;h1
 !s100 FBoW^`Ef_oDKhhg@7V1zM2
 R6
 32
-R142
+R23
 !i10b 1
-R143
-R251
-R252
+R24
+R263
+R264
 !i113 1
 R11
 R12
 Ezeroextend1
-Z253 w1590409755
+Z265 w1590409755
 R1
 R2
 R3
-Z254 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend1.vhd
-Z255 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend1.vhd
+Z266 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend1.vhd
+Z267 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend1.vhd
 l0
 L4
 VO6SgTTTBZ7VP`Qj0joY2j3
 !s100 Gl9Xc:bF4Tj`SkVe2n@g71
 R6
 32
-R154
+R71
 !i10b 1
-R155
-Z256 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend1.vhd|
-Z257 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend1.vhd|
+R72
+Z268 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend1.vhd|
+Z269 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend1.vhd|
 !i113 1
 R11
 R12
@@ -1758,32 +1978,32 @@ VY:lK7V2_C[A1^YAlWVkeV3
 !s100 h6>NVA_WnLdY]KK;87kz61
 R6
 32
-R154
+R71
 !i10b 1
-R155
-R256
-R257
+R72
+R268
+R269
 !i113 1
 R11
 R12
 Ezeroextend2
-Z258 w1590409641
+Z270 w1590409641
 R1
 R2
 R3
-Z259 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend2.vhd
-Z260 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend2.vhd
+Z271 8C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend2.vhd
+Z272 FC:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend2.vhd
 l0
 L4
 V=lV]D<nCX0Rf>gOHQPg>d0
 !s100 gH`@E56RkJ6D6?<C>7GJ^2
 R6
 32
-R154
+R23
 !i10b 1
-R155
-Z261 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend2.vhd|
-Z262 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend2.vhd|
+R24
+Z273 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend2.vhd|
+Z274 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend2.vhd|
 !i113 1
 R11
 R12
@@ -1797,32 +2017,32 @@ VN^1P6zVMiK9dM2KCi`[b`0
 !s100 YTjQEYf9kC=cLBIN1LH]j0
 R6
 32
-R154
+R23
 !i10b 1
-R155
-R261
-R262
+R24
+R273
+R274
 !i113 1
 R11
 R12
 Ezeroextract
-Z263 w1589224592
+Z275 w1589224592
 R1
 R2
 R3
-Z264 8C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/zeroextract.vhd
-Z265 FC:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/zeroextract.vhd
+Z276 8C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/zeroextract.vhd
+Z277 FC:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/zeroextract.vhd
 l0
 L3
 V7>D13>gmEU<ToVZa5>F3D2
 !s100 <G;YU?PiICYM6i>0EEZz32
 R6
 32
-R142
+R23
 !i10b 1
-R143
-Z266 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/zeroextract.vhd|
-Z267 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/zeroextract.vhd|
+R24
+Z278 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/zeroextract.vhd|
+Z279 !s107 C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/zeroextract.vhd|
 !i113 1
 R11
 R12
@@ -1836,11 +2056,11 @@ VnCSG1Q9]k2UB_0BZnmnEf2
 !s100 ICG4WLjWQNVnMdjlZ1I;F1
 R6
 32
-R142
+R23
 !i10b 1
-R143
-R266
-R267
+R24
+R278
+R279
 !i113 1
 R11
 R12

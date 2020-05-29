@@ -1,3 +1,4 @@
+
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
@@ -13,7 +14,8 @@ END ENTITY FDbuffer;
 
 ARCHITECTURE arch_FDbuffer OF FDbuffer IS
 
-component Loayregister IS
+component LoayregisterFalling IS
+Generic(n:integer :=32);
 PORT(
 Rin:in std_logic_vector(31 downto 0);
 clk,rst,en:in std_logic;
@@ -31,9 +33,10 @@ END component;
 
 
 signal enable :std_logic;
+signal reset :std_logic :='0';
 begin
 enable <= not Stall;
 
-PC1: Loayregister PORT MAP(PC,Clk,'0',enable,OutPC);
+PC1: LoayregisterFalling Generic map(32) PORT MAP(PC,Clk,reset,enable,OutPC);
 Inst1: Flushreg PORT MAP(Instruction,Clk,Flush,enable,OutInstruction);
 END arch_FDbuffer;

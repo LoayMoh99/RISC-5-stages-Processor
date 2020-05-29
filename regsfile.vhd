@@ -37,7 +37,16 @@ out1:out std_logic_vector(7 downto 0));
 
 end component;
 
-component LoayregisterFalling is
+component Loayregister is
+Generic(n:integer :=32);
+port (
+Rin:in std_logic_vector(n-1 downto 0);
+clk,rst,en:in std_logic;
+Rout:out std_logic_vector(n-1 downto 0));
+
+end component;
+
+component LoayregisterNoCLK is
 Generic(n:integer :=32);
 port (
 Rin:in std_logic_vector(n-1 downto 0);
@@ -60,26 +69,27 @@ Signal rr1,rr2,rr3,rr4,rr5,rr6,rr7,rr8: std_logic_vector(n-1 downto 0);
 Signal wEn1,wEn2: std_logic_vector(7 downto 0); --From decoder to write registers
 --Signal sel: std_logic_vector(1 downto 0);
 Begin
+--Write on the Rising edge --
 --for RegisterWriteData1
 d1: decoder port map(RegWrite1,WriteReg1,wEn1); 
-wr1: LoayregisterFalling generic map(n) port map(WriteData1,clk,rst,wEn1(0),temp11);
-wr2: LoayregisterFalling generic map(n) port map(WriteData1,clk,rst,wEn1(1),temp21);
-wr3: LoayregisterFalling generic map(n) port map(WriteData1,clk,rst,wEn1(2),temp31);
-wr4: LoayregisterFalling generic map(n) port map(WriteData1,clk,rst,wEn1(3),temp41);
-wr5: LoayregisterFalling generic map(n) port map(WriteData1,clk,rst,wEn1(4),temp51);
-wr6: LoayregisterFalling generic map(n) port map(WriteData1,clk,rst,wEn1(5),temp61);
-wr7: LoayregisterFalling generic map(n) port map(WriteData1,clk,rst,wEn1(6),temp71);
-wr8: LoayregisterFalling generic map(n) port map(WriteData1,clk,rst,wEn1(7),temp81);
+wr1: Loayregister generic map(n) port map(WriteData1,clk,rst,wEn1(0),temp11);
+wr2: Loayregister generic map(n) port map(WriteData1,clk,rst,wEn1(1),temp21);
+wr3: Loayregister generic map(n) port map(WriteData1,clk,rst,wEn1(2),temp31);
+wr4: Loayregister generic map(n) port map(WriteData1,clk,rst,wEn1(3),temp41);
+wr5: Loayregister generic map(n) port map(WriteData1,clk,rst,wEn1(4),temp51);
+wr6: Loayregister generic map(n) port map(WriteData1,clk,rst,wEn1(5),temp61);
+wr7: Loayregister generic map(n) port map(WriteData1,clk,rst,wEn1(6),temp71);
+wr8: Loayregister generic map(n) port map(WriteData1,clk,rst,wEn1(7),temp81);
 --for RegisterWriteData2
 d2: decoder port map(RegWrite2,WriteReg2,wEn2); 
-wwr1: LoayregisterFalling generic map(n) port map(WriteData2,clk,rst,wEn2(0),temp12);
-wwr2: LoayregisterFalling generic map(n) port map(WriteData2,clk,rst,wEn2(1),temp22);
-wwr3: LoayregisterFalling generic map(n) port map(WriteData2,clk,rst,wEn2(2),temp32);
-wwr4: LoayregisterFalling generic map(n) port map(WriteData2,clk,rst,wEn2(3),temp42);
-wwr5: LoayregisterFalling generic map(n) port map(WriteData2,clk,rst,wEn2(4),temp52);
-wwr6: LoayregisterFalling generic map(n) port map(WriteData2,clk,rst,wEn2(5),temp62);
-wwr7: LoayregisterFalling generic map(n) port map(WriteData2,clk,rst,wEn2(6),temp72);
-wwr8: LoayregisterFalling generic map(n) port map(WriteData2,clk,rst,wEn2(7),temp82);
+wwr1: Loayregister generic map(n) port map(WriteData2,clk,rst,wEn2(0),temp12);
+wwr2: Loayregister generic map(n) port map(WriteData2,clk,rst,wEn2(1),temp22);
+wwr3: Loayregister generic map(n) port map(WriteData2,clk,rst,wEn2(2),temp32);
+wwr4: Loayregister generic map(n) port map(WriteData2,clk,rst,wEn2(3),temp42);
+wwr5: Loayregister generic map(n) port map(WriteData2,clk,rst,wEn2(4),temp52);
+wwr6: Loayregister generic map(n) port map(WriteData2,clk,rst,wEn2(5),temp62);
+wwr7: Loayregister generic map(n) port map(WriteData2,clk,rst,wEn2(6),temp72);
+wwr8: Loayregister generic map(n) port map(WriteData2,clk,rst,wEn2(7),temp82);
 -----------------------------------------------------------------------
 --sel<= (wEn2(0)or wEn2(1) or wEn2(2)or wEn2(3) or wEn2(4)or wEn2(5) or wEn2(6)or wEn2(7))&(wEn1(0)or wEn1(1) or wEn1(2)or wEn1(3) or wEn1(4)or wEn1(5) or wEn1(6)or wEn1(7));
 
@@ -115,15 +125,16 @@ temp8<= temp81 when wEn1(7)='1' else
 	temp82 when wEn2(7)='1' else
 	temp8;
 -----------------------------------------------------------------------
+
 --RegisterRead Important Note "they will read according to which write enable is activated","Enable here always 1 because they will read all and multiplixer will choose which one to out"
-rrr1: LoayregisterFalling generic map(n) port map(temp1,clk,rst,'1',rr1);
-rrr2: LoayregisterFalling generic map(n) port map(temp2,clk,rst,'1',rr2);
-rrr3: LoayregisterFalling generic map(n) port map(temp3,clk,rst,'1',rr3);
-rrr4: LoayregisterFalling generic map(n) port map(temp4,clk,rst,'1',rr4);
-rrr5: LoayregisterFalling generic map(n) port map(temp5,clk,rst,'1',rr5);
-rrr6: LoayregisterFalling generic map(n) port map(temp6,clk,rst,'1',rr6);
-rrr7: LoayregisterFalling generic map(n) port map(temp7,clk,rst,'1',rr7);
-rrr8: LoayregisterFalling generic map(n) port map(temp8,clk,rst,'1',rr8);
+rrr1: LoayregisterNoCLK generic map(n) port map(temp1,clk,rst,'1',rr1);
+rrr2: LoayregisterNoCLK generic map(n) port map(temp2,clk,rst,'1',rr2);
+rrr3: LoayregisterNoCLK generic map(n) port map(temp3,clk,rst,'1',rr3);
+rrr4: LoayregisterNoCLK generic map(n) port map(temp4,clk,rst,'1',rr4);
+rrr5: LoayregisterNoCLK generic map(n) port map(temp5,clk,rst,'1',rr5);
+rrr6: LoayregisterNoCLK generic map(n) port map(temp6,clk,rst,'1',rr6);
+rrr7: LoayregisterNoCLK generic map(n) port map(temp7,clk,rst,'1',rr7);
+rrr8: LoayregisterNoCLK generic map(n) port map(temp8,clk,rst,'1',rr8);
 ---------------------------------------------------------------------
 DataOut1<=rr1 when ReadReg1="000" else
 	  rr2 when ReadReg1="001" else

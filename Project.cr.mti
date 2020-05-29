@@ -7,13 +7,21 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity FetchUnit
 -- Compiling architecture FetchingUnit of FetchUnit
 
-} {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1.vhd}
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/Arch Project/spRegister.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/Arch Project/spRegister.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity mux1
--- Compiling architecture archmux1 of mux1
+-- Compiling entity spRegister
+-- Compiling architecture reg_arch of spRegister
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/Arch Project/RISC.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/Arch Project/RISC.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity RISC_processor
+-- Compiling architecture RISC_processor_arch of RISC_processor
 
 } {} {}} {C:/Users/Otrebor Azilab/Desktop/Arch Project/ControlUnit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/Arch Project/ControlUnit.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -41,6 +49,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity PC_reg
 -- Compiling architecture PC_arch of PC_reg
 
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux1
+-- Compiling architecture archmux1 of mux1
+
 } {} {}} {C:/Users/Otrebor Azilab/Desktop/execute/execute/hexecute.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/execute/execute/hexecute.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -48,6 +64,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package std_logic_1164
 -- Compiling entity EXECUTE
 -- Compiling architecture STRUCTEXECUTE of EXECUTE
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/Arch Project/registerNoClk.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/Arch Project/registerNoClk.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity LoayregisterNoCLK
+-- Compiling architecture reg_arch of LoayregisterNoCLK
 
 } {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux2.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux2.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -81,14 +105,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity CCRregister
 -- Compiling architecture reg_arch of CCRregister
 
-} {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/Decoder.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/Decoder.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity decoder
--- Compiling architecture dec of decoder
-
 } {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux4.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/mux4.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -96,6 +112,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package std_logic_1164
 -- Compiling entity mux4
 -- Compiling architecture archi of mux4
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/Decoder.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/Decoder.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity decoder
+-- Compiling architecture dec of decoder
 
 } {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/DataMemory.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/DataMemory.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -114,6 +138,22 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity ZEROEXTRACT
 -- Compiling architecture archZE of ZEROEXTRACT
 
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FDbuffer.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FDbuffer.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity FDbuffer
+-- Compiling architecture arch_FDbuffer of FDbuffer
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/Arch Project/FU+FDbuffer.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/Arch Project/FU+FDbuffer.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity FU_FD
+-- Compiling architecture FU_FD_arch of FU_FD
+
 } {} {}} {C:/Users/Otrebor Azilab/Desktop/execute/execute/hALU.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/execute/execute/hALU.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -123,13 +163,13 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity ALU
 -- Compiling architecture structALU of ALU
 
-} {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FDbuffer.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FDbuffer.vhd}
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/mux2.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/mux2.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity FDbuffer
--- Compiling architecture arch_FDbuffer of FDbuffer
+-- Compiling entity mux2
+-- Compiling architecture archmx of mux2
 
 } {} {}} {C:/Users/Otrebor Azilab/Desktop/Arch_Labs/Counter.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/Arch_Labs/Counter.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -139,14 +179,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package NUMERIC_STD
 -- Compiling entity counter
 -- Compiling architecture arch of counter
-
-} {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/mux2.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/mux2.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity mux2
--- Compiling architecture archmx of mux2
 
 } {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/mem_wb_buffer/memWBbuffer.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/mem_wb_buffer/memWBbuffer.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -164,14 +196,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity regsfile
 -- Compiling architecture struct of regsfile
 
-} {} {}} {C:/Users/Otrebor Azilab/Desktop/Arch Project/fallingReg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/Arch Project/fallingReg.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity LoayregisterFalling
--- Compiling architecture reg_arch of LoayregisterFalling
-
 } {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/register.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/register.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -180,13 +204,13 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Loayregister
 -- Compiling architecture reg_arch of Loayregister
 
-} {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/memorystage.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/memorystage.vhd}
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/Arch Project/fallingReg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/Arch Project/fallingReg.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity memorystage
--- Compiling architecture archmm of memorystage
+-- Compiling entity LoayregisterFalling
+-- Compiling architecture reg_arch of LoayregisterFalling
 
 } {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend1.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend1.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -196,13 +220,13 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity zeroextend1
 -- Compiling architecture archz of zeroextend1
 
-} {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/stackadder.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/stackadder.vhd}
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/memorystage.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/memorystage.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity stadder
--- Compiling architecture archst of stadder
+-- Compiling entity memorystage
+-- Compiling architecture archmm of memorystage
 
 } {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend2.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/zeroextend2.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -211,6 +235,22 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package std_logic_1164
 -- Compiling entity zeroextend2
 -- Compiling architecture archz of zeroextend2
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/stackadder.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/memorystage/stackadder.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity stadder
+-- Compiling architecture archst of stadder
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FlushRegister.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FlushRegister.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Flushreg
+-- Compiling architecture Flushreg_arch of Flushreg
 
 } {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/buffer/buffer/EXtoMEMbuffer.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/buffer/buffer/EXtoMEMbuffer.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -228,14 +268,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Mux4x1
 -- Compiling architecture archM of Mux4x1
 
-} {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/mem_wb_buffer/regs3.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/mem_wb_buffer/regs3.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity regi3
--- Compiling architecture regg_archh of regi3
-
 } {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1bit4x1.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/mux1bit4x1.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -243,14 +275,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package std_logic_1164
 -- Compiling entity Mux4x11
 -- Compiling architecture archMm of Mux4x11
-
-} {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FlushRegister.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/FlushRegister.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity Flushreg
--- Compiling architecture Flushreg_arch of Flushreg
 
 } {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/OneBitFA.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/FU/FU/OneBitFA.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -260,14 +284,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity my_adder
 -- Compiling architecture a_my_adder of my_adder
 
-} {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/decodingpart.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/toLoayProjectPart1''''''/decodingstage/decodingpart.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity decodingpart
--- Compiling architecture structr of decodingpart
-
 } {} {}} {C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/zeroextend.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/ArchReso/execute/execute/zeroextend.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -275,5 +291,23 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package std_logic_1164
 -- Compiling entity ZEROEXTEND
 -- Compiling architecture archZ of ZEROEXTEND
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/Arch Project/ControlUnit_V.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/Arch Project/ControlUnit_V.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ControlUnit_V
+-- Compiling architecture ControlUnit_V_arch of ControlUnit_V
+
+} {} {}} {C:/Users/Otrebor Azilab/Desktop/Arch Project/RISC_V.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Otrebor Azilab/Desktop/Arch Project/RISC_V.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity RISC_processor_V
+-- Compiling architecture RISC_processorV_arch of RISC_processor_V
 
 } {} {}}

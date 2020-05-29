@@ -12,28 +12,37 @@ port(
 --outputs:
 	ALUop,ALUsrc,BranchEN,StackEN,StackAddr,regWrite,regWrite2,memTOreg,OUTportEN,memRead,memWrite : OUT std_logic;
 	CarryEN,BrType,WBdataSrc : OUT std_logic_vector(1 downto 0);
-	Reset1,Reset2,CallEn,INT1,INT2,StallCU,F_Flush,WrFlags,ChangePC : OUT std_logic;
+	Reset1,CallEn,INT1,INT2,StallCU,F_Flush,WrFlags,ChangePC : OUT std_logic;
 	MemSrcData : OUT std_logic_vector(1 downto 0)
 );
 end entity ControlUnit;
 
 Architecture ControlUnit_arch of ControlUnit is
 
+
 signal counter: unsigned(2 downto 0):="000";
-signal compNormal: std_logic:='0';
+signal compNormal: std_logic_vector(1 downto 0):="00";
+signal currFetchIsMem: std_logic:='0'; --0-> not mem or 1->mem
 signal sel: std_logic_vector(2 downto 0);--sel which counter works.. 
 
 Begin
-Process(clk,INT,Reset) is
+Process(clk,INT,Reset,op_code(4 downto 0),Rsrc,Rdst) is
 begin
+if falling_edge(clk) then
+	if counter/="000" then
+		counter<= to_unsigned((to_integer(counter))-1,3);
+	end if;
+end if;
+
 --reset
 if Reset='1' then
-	counter<="010";
+	counter<="001";
 	sel<="000";
 --interrupt
 elsif INT='1' then
-	compNormal<='1';--comp normally the curr fetched instr..
+	compNormal<="11";--comp normally the curr fetched instr..
 	counter<="101";
+	INT1<='1';
 	sel<="001";
 --call
 elsif op_code(4 downto 0)="10011" then
@@ -50,90 +59,122 @@ elsif op_code(4 downto 0)="11111" then
 elsif counter="000" then
 	sel<="111";
 end if;
-if rising_edge(clk) then
-   if sel="000" then --reset
-	compNormal<='0';
-	if counter="010" then
-		 StallCU<='1'; 
-		 F_Flush<='1'; 
-		 Reset1<='1'; 
-		 Reset2<='0';
 
+   if sel="000" then --reset
+	compNormal<="00";
+	if counter="001" then
+		StallCU<='1'; 
+		F_Flush<='1'; 
+		Reset1<='1'; 
 	MemSrcData <="10";
 	CallEn <='0';
 	INT1<='0'; 
-	INT2<='0';
 	WrFlags<='0';
 	ChangePC<='0';
-	elsif counter="001" then
-		 F_Flush<='1'; 
-		 Reset1<='0'; 
-		 Reset2<='1';
-	MemSrcData <="10";
-	StallCU<='0'; 
-	INT1<='0'; 
-	INT2<='0';
-	WrFlags<='0';
-	ChangePC<='0';
+--	elsif counter="001" then
+	--	 F_Flush<='1'; 
+	--	 Reset1<='0'; 
+	--MemSrcData <="10";
+	--StallCU<='0'; 
+	--INT1<='0'; 
+	--WrFlags<='0';
+	--ChangePC<='0';
 	else sel<="111";
 	end if;
 
    elsif sel="001" then --int
-	if counter="101" then
-		 compNormal<='0';
-		 counter<= to_unsigned((to_integer(counter))-1,3);
-	elsif counter="100" then
-	compNormal<='0';
+	if counter="101" then --pc to be pushed in FD buffer
+		 compNormal<="11";
+		 INT1<='1';
+		 INT2<='0'; 
+		if op_code(4 downto 1)="1110" or op_code(4 downto 1)="1100"  then
+			currFetchIsMem<='1';
+		else 	currFetchIsMem<='0';
+		end if;
+	elsif counter="100" then --pc to be pushed in DE buffer
+	compNormal<="00";
 		 StallCU<='1';
 		 F_Flush<='1'; 
-		 INT1<='1'; 
-		 INT2<='0';
+		 INT1<='0';
+		 INT2<='1'; 
 	MemSrcData <="10";
 	Reset1<='0'; 
-	Reset2<='0';
 	WrFlags<='0';
 	ChangePC<='0';
 	elsif counter="011" then
-	compNormal<='0';
-		 F_Flush<='1'; 
-		 INT1<='0'; 
-		 INT2<='1';
-	MemSrcData <="10";
-	StallCU<='0'; 
+--if (CurrFetInstr was Memory Instruction) -> StallCU=1 && F-Flush=1
+--Else ->? Push flags
+		if currFetchIsMem='1' then
+			StallCU<='1'; 
+		else 	
+			--push flags
+			StallCU<='0'; 
+			MemSrcData <="01";
+		 	StackEn<='1'; --push flags	 
+		 	StackAddr<='0';
+		 	memWrite<='1';
+		 	memRead<='0';
+		end if;
+	compNormal<="00";
+	INT1<='0';
+	INT2<='0'; 
+	F_Flush<='1'; 
 	CallEn <='0';
 	Reset1<='0'; 
-	Reset2<='0';
 	WrFlags<='0';
 	ChangePC<='0';
 	elsif counter="010" then
-	compNormal<='0';
-		 F_Flush<='1'; 
-		 Reset1<='0'; 
-		 Reset2<='1';
-	MemSrcData <="10";
-	StallCU<='0'; 
-	CallEn <='0';
+		if currFetchIsMem='1' then
+			--push flags
+			StallCU<='0'; 
+			MemSrcData <="01";
+		 	StackEn<='1'; --push flags	 
+		 	StackAddr<='0';
+		 	memWrite<='1';
+		 	memRead<='0';
+
+		else 	
+			--push pc
+			StallCU<='0'; 
+			MemSrcData <="00";
+		 	StackEn<='1'; --push pc	 
+		 	StackAddr<='0';
+		 	memWrite<='1';
+		 	memRead<='0';
+		end if;
+	compNormal<="00";
+	F_Flush<='0'; 
 	INT1<='0'; 
-	INT2<='0';
+	INT2<='0'; 
+	CallEn <='0';
+ 	Reset1<='0'; 
 	WrFlags<='0';
 	ChangePC<='0';
 	elsif counter="001" then
-	compNormal<='0';
-		 F_Flush<='1'; 
-		 Reset1<='0'; 
-		 Reset2<='1';
-	MemSrcData <="10";
-	StallCU<='0'; 
-	CallEn <='0';
+		if currFetchIsMem='1' then
+			--push pc
+			StallCU<='0'; 
+			MemSrcData <="00";
+		 	StackEn<='1'; --push pc	 
+		 	StackAddr<='0';
+		 	memWrite<='1';
+		 	memRead<='0';
+			compNormal<="00";
+		else 	
+			compNormal<="10";
+		end if;
+	F_Flush<='0'; 
 	INT1<='0'; 
-	INT2<='0';
+	INT2<='0'; 
+	CallEn <='0';
+ 	Reset1<='0'; 
 	WrFlags<='0';
 	ChangePC<='0';
 	else sel<="111";
 	end if;
 
     elsif sel="010" then --call
-	compNormal<='0';
+	compNormal<="00";
 	if counter="001" then
 		 StallCU<='1'; 
 		 F_Flush<='1'; 
@@ -144,16 +185,15 @@ if rising_edge(clk) then
 		 memWrite<='1';
 		 memRead<='0';
 	Reset1<='0'; 
-	Reset2<='0';
 	INT1<='0'; 
-	INT2<='0';
+	INT2<='0';  
 	WrFlags<='0';
 	ChangePC<='0';
 	else sel<="111";
 	end if;
 
     elsif sel="011" then --ret
-	compNormal<='0';
+	compNormal<="00";
 	if counter="011" then
 		 StallCU<='1'; 
 		 F_Flush<='1'; 
@@ -163,9 +203,8 @@ if rising_edge(clk) then
 		 memRead<='1';
 		 memWrite<='0';
 	Reset1<='0'; 
-	Reset2<='0';
-	INT1<='0'; 
-	INT2<='0';
+	INT1<='0';
+	INT2<='0';   
 	WrFlags<='0';
 	ChangePC<='0';
 	elsif counter="010" then
@@ -174,9 +213,8 @@ if rising_edge(clk) then
 	MemSrcData <="10";
 	CallEn <='0';
 	Reset1<='0'; 
-	Reset2<='0';
-	INT1<='0'; 
-	INT2<='0';
+	INT1<='0';
+	INT2<='0';   
 	WrFlags<='0';
 	ChangePC<='0';
 	elsif counter="001" then
@@ -186,15 +224,14 @@ if rising_edge(clk) then
 	MemSrcData <="10";
 	CallEn <='0';
 	Reset1<='0'; 
-	Reset2<='0';
-	INT1<='0'; 
-	INT2<='0';
+	INT1<='0';
+	INT2<='0';   
 	WrFlags<='0';
 	else sel<="111";
 	end if;
 
     elsif sel="100" then --rti
-	compNormal<='0';
+	compNormal<="00";
 	if counter="011" then
 		 StallCU<='1'; 
 		 F_Flush<='1'; 
@@ -204,9 +241,8 @@ if rising_edge(clk) then
 		 memRead<='1';
 		 memWrite<='0';
 	Reset1<='0'; 
-	Reset2<='0';
-	INT1<='0'; 
-	INT2<='0';
+	INT1<='0';
+	INT2<='0';   
 	WrFlags<='0';
 	ChangePC<='0';
 	elsif counter="010" then
@@ -218,9 +254,8 @@ if rising_edge(clk) then
 		 memRead<='1';
 		 memWrite<='0';
 	Reset1<='0'; 
-	Reset2<='0';
-	INT1<='0'; 
-	INT2<='0';
+	INT1<='0';
+	INT2<='0';   
 	WrFlags<='0';
 	ChangePC<='0';
 	elsif counter="001" then
@@ -232,27 +267,28 @@ if rising_edge(clk) then
 	MemSrcData <="10";
 	CallEn <='0';
 	Reset1<='0'; 
-	Reset2<='0';
-	INT1<='0'; 
-	INT2<='0';
+	INT1<='0';
+	INT2<='0';   
 	else sel<="111";
 	end if;
    else 
-	compNormal<='0';
+	compNormal<="00";
    end if;
 
-   if counter="000" or compNormal ='1' then
+   if counter="000" or compNormal(1) ='1' then
 --bn clear all the special flags that is used by Special instr and events..
 	MemSrcData <="10";
 	StallCU<='0'; 
 	F_Flush<='0';
 	CallEn <='0';
 	Reset1<='0'; 
-	Reset2<='0';
-	INT1<='0'; 
-	INT2<='0';
 	WrFlags<='0';
 	ChangePC<='0';
+
+	if compNormal(1)='0' then 	
+	 	INT1<='0';
+		INT2<='0'; 
+	end if;
 --Here is the declaring of all the control signals by the op_code of the instructions..
 	if op_code(4)='0' OR op_code(4 downto 0)="10000" then
 		ALUop<='0';
@@ -304,17 +340,17 @@ if rising_edge(clk) then
 	else 	WBdataSrc<="00";
 	end if;
 ----------------------------------------------------------------------------------
-	if op_code(4 downto 1)="0101" OR op_code(4 downto 2)="101" OR op_code(4 downto 0)="01100" OR op_code(4 downto 0)="10000" OR op_code(4 downto 0)="11001" OR op_code(4 downto 0)="11100" then
+	if (op_code(4 downto 1)="0101" OR op_code(4 downto 2)="101" OR op_code(4 downto 0)="01100" OR op_code(4 downto 0)="10000" OR op_code(4 downto 0)="11001" OR op_code(4 downto 0)="11100")='1' then
 		regWrite<='0';
 	else 	regWrite<='1';
 	end if;
 ----------------------------------------------------------------------------------
 	if op_code(4 downto 0)="00100" and Rdst/=Rsrc then
-		regWrite2<='0';
-	else 	regWrite2<='1';
+		regWrite2<='1';
+	else 	regWrite2<='0';
 	end if;
 ----------------------------------------------------------------------------------
-	if op_code(4 downto 0)="11000" OR op_code(4 downto 0)="11101" then
+	if (op_code(4 downto 0)="11000" OR op_code(4 downto 0)="11101") then
 		memTOreg<='0';
 	else 	memTOreg<='1';
 	end if;
@@ -324,19 +360,17 @@ if rising_edge(clk) then
 	else 	OUTportEN<='0';
 	end if;
 ----------------------------------------------------------------------------------
-	if op_code(4 downto 0)="11000" OR op_code(4 downto 0)="11101" then
+	if (op_code(4 downto 0)="11000" OR op_code(4 downto 0)="11101") then
 		memRead<='1';
 	else 	memRead<='0';
 	end if;
 ----------------------------------------------------------------------------------
-	if op_code(4 downto 0)="11001" OR op_code(4 downto 0)="11100" then
+	if (op_code(4 downto 0)="11001" OR op_code(4 downto 0)="11100") then
 		memWrite<='1';
 	else 	memWrite<='0';
 	end if;
-   else counter<= to_unsigned((to_integer(counter))-1,3);
    end if;
 ----------------------------------------------------------------------------------
-end if;
 ----------------------------------------------------------------------------------
 end Process;
 

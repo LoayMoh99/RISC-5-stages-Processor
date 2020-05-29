@@ -1,14 +1,14 @@
 Library ieee;
 use ieee.std_logic_1164.all;
 
-Entity registers is
+Entity Loayregister is
 Generic(n:integer :=32);
 port (
 Rin:in std_logic_vector(n-1 downto 0);
 clk,rst,en:in std_logic;
 Rout:out std_logic_vector(n-1 downto 0));
-end registers;
-ARCHITECTURE reg_arch of registers is
+end Loayregister;
+ARCHITECTURE reg_arch of Loayregister is
 begin
 Process(clk,rst) 
 --this is mainly used for sequential circuits while combinational also can be performed 
@@ -16,7 +16,7 @@ Process(clk,rst)
 begin
 if(rst ='1') then
    Rout<= (others=>'0');
-elsif  falling_edge(clk) then
+elsif  rising_edge(clk) then
 	if en='1' then
 		Rout<=Rin;
 	end if;

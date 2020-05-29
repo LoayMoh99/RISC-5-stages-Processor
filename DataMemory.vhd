@@ -15,16 +15,16 @@ SIGNAL Mem : Mem_type ;
 BEGIN
 PROCESS(clk) IS
 BEGIN
-		IF falling_edge(clk) THEN  
+		IF rising_edge(clk) THEN  
 			IF we = '1' THEN
 				Mem(to_integer(unsigned(address))) <= dataIn(15 downto 0);
                                 Mem(to_integer(unsigned(address))+1) <= dataIn(31 downto 16);
 			END IF;
-                       IF re='1' THEN
+		END IF;
+                IF re='1' THEN
                                dataOut(15 downto 0) <= Mem(to_integer(unsigned(address)));
                                dataOut(31 downto 16) <= Mem(to_integer(unsigned(address)));
-                       END IF;
-		END IF;
+                END IF;
 END PROCESS;
 
 END arch_Mem;

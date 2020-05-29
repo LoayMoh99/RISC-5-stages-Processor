@@ -9,8 +9,8 @@ port( pcin: in std_logic_vector(31 downto 0);
  -------------------------------------------------------------------------------------------------
 clk: in std_logic;
 flush: in std_logic; 
-stall: in std_logic;
-changePC: out std_logic;
+--stall: in std_logic;
+--changePC: out std_logic;
 --------------------------------------------------------
 --signal from MEM
 --RegWrite ===>outmem(0)
@@ -32,7 +32,7 @@ end bufferr;
 
 
 ARCHITECTURE bufferarch of bufferr is
-component Loayregister is
+component LoayregisterFalling is
 Generic(n:integer :=8);
 port (
 Rin:in std_logic_vector(n-1 downto 0);
@@ -45,15 +45,15 @@ Signal enable:std_logic :='1';
 Begin
 
 
-pc: Loayregister GENERIC MAP(32) port map(pcin,clk,flush,enable,pcout);
-outflags: Loayregister GENERIC MAP(32) port map( outflagsfrom0extendin,clk,flush,enable, outflagsfrom0extendout);
-Eadd: Loayregister GENERIC MAP(32) port map( effectiveaddressin,clk,flush,enable, effectiveaddressout);
-ALUU: Loayregister GENERIC MAP(32) port map( ALUOUTin,clk,flush,enable, ALUOUTout);
-RDESS2: Loayregister GENERIC MAP(3) port map( Rdest2in,clk,flush,enable, Rdest2out);
-RDESS1: Loayregister GENERIC MAP(3) port map( Rdestin,clk,flush,enable, Rdestout);
-SWAP: Loayregister GENERIC MAP(32) port map(DataSwapin,clk,flush,enable, DataSwapout);
-mem: Loayregister GENERIC MAP(8) port map(inputMEM,clk,flush,enable, outMEM);
-WB:Loayregister GENERIC MAP(4) port map(inputWB,clk,flush,enable, outputWB);
+pc: LoayregisterFalling GENERIC MAP(32) port map(pcin,clk,flush,enable,pcout);
+outflags: LoayregisterFalling GENERIC MAP(32) port map( outflagsfrom0extendin,clk,flush,enable, outflagsfrom0extendout);
+Eadd: LoayregisterFalling GENERIC MAP(32) port map( effectiveaddressin,clk,flush,enable, effectiveaddressout);
+ALUU: LoayregisterFalling GENERIC MAP(32) port map( ALUOUTin,clk,flush,enable, ALUOUTout);
+RDESS2: LoayregisterFalling GENERIC MAP(3) port map( Rdest2in,clk,flush,enable, Rdest2out);
+RDESS1: LoayregisterFalling GENERIC MAP(3) port map( Rdestin,clk,flush,enable, Rdestout);
+SWAP: LoayregisterFalling GENERIC MAP(32) port map(DataSwapin,clk,flush,enable, DataSwapout);
+mem: LoayregisterFalling GENERIC MAP(8) port map(inputMEM,clk,flush,enable, outMEM);
+WB:LoayregisterFalling GENERIC MAP(4) port map(inputWB,clk,flush,enable, outputWB);
 
 
 

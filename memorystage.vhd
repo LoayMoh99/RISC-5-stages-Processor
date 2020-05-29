@@ -12,7 +12,7 @@ aluoutt: in std_logic_vector(n-1 downto 0);
 dataswapin: in std_logic_vector(n-1 downto 0);
 rdestin1: in std_logic_vector(2 downto 0);
 rdestin2: in std_logic_vector(2 downto 0);
-clk: in std_logic;
+clk,rst: in std_logic;
 stackenable: in std_logic; --control signal
 memsrcdata: in std_logic_vector(1 downto 0);  --control signal
 stackaddersignal: in std_logic; --control signal
@@ -49,25 +49,34 @@ dataIn  : IN  std_logic_vector(31 DOWNTO 0);
 dataOut : OUT std_logic_vector(31 DOWNTO 0));
 end component;
 
+component spRegister is
+Generic(n:integer :=32);
+port (
+Rin:in std_logic_vector(n-1 downto 0);
+clk,rst,en:in std_logic;
+Rout:out std_logic_vector(n-1 downto 0));
+end component;
+
 component stadder is
 generic(n:integer :=32);
 port(
-inp1: IN std_logic_vector(n-1 downto 0);
---inp2: IN std_logic_vector(1 downto 0);
-sel: IN std_logic;
-outst : out std_logic_vector(n-1 downto 0));
+inSP: IN std_logic_vector(n-1 downto 0);
+sel,en: IN std_logic;--sel->stackAddr 
+outSP : out std_logic_vector(n-1 downto 0));
 end component;
 
 Signal wd,adr: std_logic_vector(31 downto 0);
-Signal sp: std_logic_vector(31 downto 0):=x"00001111";
+Signal spin: std_logic_vector(31 downto 0);
+signal spout: std_logic_vector(31 downto 0);
 
 Begin
 mm1: Mux4x1 generic map(n) port map(pccall,flags,aluoutt,aluoutt,memsrcdata,wd); --out to data memory
-ss: stadder generic map(n) port map(sp,stackaddersignal,sp);
-mm2: mux2 generic map(n) port map(effectiveadr,sp,stackenable,adr);
+ss: stadder generic map(n) port map(spin,stackaddersignal,stackenable,spout);
+spReg: spRegister generic map(n) port map(spout,clk,rst,stackenable,spin);
+mm2: mux2 generic map(n) port map(effectiveadr,spout,stackenable,adr);
 dat: Mem port map(clk,memwrite,memread,adr,wd,readdataout);
 dataswapout<=dataswapin;
 aluoutput<=aluoutt;
 rdest1<=rdestin1;
 rdest2<=rdestin2;
-End archmm;
+end archmm;

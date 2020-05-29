@@ -1,7 +1,8 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
+USE ieee.numeric_std.all;
 
-Entity RISC_processor is
+Entity RISC_processor_V is
 generic(n:integer :=32);
 port( 
 --inputs:
@@ -9,9 +10,9 @@ port(
         INport : IN std_logic_vector(31 downto 0);
 --outputs:
 	OUTport : OUT std_logic_vector(31 downto 0));
-end entity RISC_processor;
+end entity RISC_processor_V;
 
-Architecture RISC_processor_arch of RISC_processor is
+Architecture RISC_processorV_arch of RISC_processor_V is
 --components:
 component FetchUnit IS
 GENERIC (n : integer := 32);
@@ -34,18 +35,22 @@ OutPC: OUT std_logic_vector(31 downto 0));
 
 END component;
 ------------------------------------------------------------------
-component ControlUnit is
+component ControlUnit_V is
 port( 
 --inputs:
 	clk,INT,Reset : IN std_logic;
         op_code : IN std_logic_vector(4 downto 0);
 	Rdst : IN std_logic_vector(2 downto 0); --Instr[7-5]
 	Rsrc : IN std_logic_vector(2 downto 0); --Instr[10-8]
+counterIn: IN unsigned(2 downto 0):="000";
+
 --outputs:
 	ALUop,ALUsrc,BranchEN,StackEN,StackAddr,regWrite,regWrite2,memTOreg,OUTportEN,memRead,memWrite : OUT std_logic;
 	CarryEN,BrType,WBdataSrc : OUT std_logic_vector(1 downto 0);
 	Reset1,CallEn,INT1,INT2,StallCU,F_Flush,WrFlags,ChangePC : OUT std_logic;
-	MemSrcData : OUT std_logic_vector(1 downto 0));
+	MemSrcData : OUT std_logic_vector(1 downto 0);
+counterOut: Out unsigned(2 downto 0)
+);
 end component;
 ------------------------------------------------------------------
 component decodingpart is
@@ -189,6 +194,13 @@ fromwbsignal: out std_logic_vector(3 downto 0)
 
 end component; 
 ------------------------------------------------------------------
+
+component counter is 
+port (clk	: in std_logic;
+CoIN		: in unsigned(2 downto 0);
+CoOut		: out unsigned(2 downto 0));
+end component;
+
 component mux2 is
 generic(n:integer :=32);
 port(
@@ -226,6 +238,8 @@ signal stallFDbuffer:std_logic;
 signal flushFDbuffer:std_logic;
 signal ex_mem_wbSignals,ex_mem_wbSignalsOutMux :std_logic_vector(31 downto 0);
 signal D_Flush :std_logic:='0';
+signal counterIn: unsigned(2 downto 0):="000";
+signal counterOut: unsigned(2 downto 0);
 
 --out mn FU   
 signal Instructionbits:std_logic_vector(31 downto 0);    	
@@ -331,21 +345,26 @@ Flush => flushFDbuffer,
 OutInstruction=>OutInstruction,
 OutPC=>OutPC_FD);
 --------------------------------------------------------------------------------------
+--counter
+countt: counter port map(clk,counterIn,counterOut);
+--------------------------------------------------------------------------------------
 --control unit (d)
-CU:  ControlUnit port map(clk=>clk ,
+CU:  ControlUnit_V port map(clk=>clk ,
 INT=> INT,
 Reset => Reset ,
 op_code => OutInstruction(4 downto 0),
 Rdst =>OutInstruction(7 downto 5),
 Rsrc=> OutInstruction(10 downto 8) ,
+counterIn=>counterIn,
 --outputs:
+counterOut=>counterOut,
 ALUop=> ALUop,
 ALUsrc=> ALUsrc ,
 BranchEN=> BranchEN,
 StackEN=>StackEN ,
 StackAddr=> StackAddr ,
-regWrite=> regWrite ,
-regWrite2=> regWrite2,
+regWrite=> WBsignalss(0) ,
+regWrite2=>WBsignalss(1) ,
 memTOreg=>memTOreg ,
 OUTportEN=> OUTportEN ,
 memRead=> memRead ,
@@ -383,8 +402,8 @@ wbdatasrc=> WBdataSrc,
 wreg1=> wReg1,
 wreg2=> wReg2,
 wdata2=>wDataSwap ,
-rwsignal1 =>WBsignalss(0),
-rwsignal2 =>WBsignalss(1),
+rwsignal1 =>regWrite,
+rwsignal2 =>regWrite2,
 rstsignal=> Reset,
 clk=> clk,
 pcin=>OutPC_FD,
@@ -535,4 +554,4 @@ sel=>WBsignalss(2) ,  --control signal
 outMx =>  WBDATAA );
 
 ----------------------------------------------------------------------------------------------------------
-end RISC_processor_arch;
+end RISC_processorV_arch;

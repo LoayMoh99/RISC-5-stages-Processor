@@ -6,7 +6,7 @@ Generic(n:integer :=16);
 port (
 dataIn:in std_logic_vector(n-1 downto 0);
 clk,rst,en:in std_logic;
-dataOut:out std_logic_vector(n-1 downto 0));
+dataOut:out std_logic_vector(n-1 downto 0):=x"00000000");
 end PC_reg;
 
 ARCHITECTURE PC_arch of PC_reg is
