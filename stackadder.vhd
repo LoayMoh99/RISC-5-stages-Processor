@@ -5,7 +5,7 @@ Entity stadder is
 generic(n:integer :=32);
 port(
 inSP: IN std_logic_vector(n-1 downto 0);
-sel,en: IN std_logic;--sel->stackAddr 
+clk,sel,en: IN std_logic;--sel->stackAddr 
 outSP : out std_logic_vector(n-1 downto 0));
 end entity stadder;
 
@@ -28,6 +28,7 @@ signal cout: std_logic ;
 begin
 a1: my_Nadder generic map(n) port map(inSP,twoo,cin,cout,aa1);
 a2: my_Nadder generic map(n) port map(inSP,twocomp,cin,cout,aa2);
+
 outSP<=aa1 when sel='1' and en='1'
 	else aa2 when sel='0' and en='1'
 	else inSP;

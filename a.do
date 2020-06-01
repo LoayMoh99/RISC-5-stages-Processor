@@ -24,12 +24,16 @@ add wave -position insertpoint  \
 sim:/risc_processor/ReadOutMemData \
 sim:/risc_processor/AlUouttowb \
 sim:/risc_processor/WBDATAA
+add wave -position insertpoint sim:/risc_processor/CU/*
 force -freeze sim:/risc_processor/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/risc_processor/INT 0 0
 force -freeze sim:/risc_processor/Reset 1 0
 force -freeze sim:/risc_processor/INport 32'h00004444 0
 mem load -i {C:/Users/Otrebor Azilab/Desktop/Arch Project/instrMem.mem} -format binary /risc_processor/fu/memory/InstMem
 mem load -i {C:/Users/Otrebor Azilab/Desktop/Arch Project/dataMem.mem} -format binary /risc_processor/mem_stagee/dat/Mem
+#Lw elassembler eshta8al yeb2a hane2ra elmemories b dol msh elly fo2..
+#mem load -i {C:/Users/Otrebor Azilab/Desktop/Arch Project/instrMem.mem} -format mti /risc_processor/fu/memory/InstMem
+#mem load -i {C:/Users/Otrebor Azilab/Desktop/Arch Project/dataMem.mem} -format mti /risc_processor/mem_stagee/dat/Mem
 run
 force -freeze sim:/risc_processor/Reset 0 0
 run

@@ -15,7 +15,7 @@ Process(clk,rst)
 --but you have to put all it's inputs in the sensitivity list
 begin
 if(rst ='1') then
-   Rout<= x"00000FFF";
+   Rout<= x"00000FFE";
 elsif  rising_edge(clk) then
 	if en='1' then
 		Rout<=Rin;

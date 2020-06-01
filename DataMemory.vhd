@@ -4,7 +4,7 @@ USE IEEE.numeric_std.all;
 
 ENTITY Mem IS
 PORT(clk,we,re : IN std_logic; 
-address : IN  std_logic_vector(31 DOWNTO 0);
+address : IN  std_logic_vector(11 DOWNTO 0);
 dataIn  : IN  std_logic_vector(31 DOWNTO 0);
 dataOut : OUT std_logic_vector(31 DOWNTO 0));
 END ENTITY Mem;
@@ -21,10 +21,14 @@ BEGIN
                                 Mem(to_integer(unsigned(address))+1) <= dataIn(31 downto 16);
 			END IF;
 		END IF;
-                IF re='1' THEN
-                               dataOut(15 downto 0) <= Mem(to_integer(unsigned(address)));
-                               dataOut(31 downto 16) <= Mem(to_integer(unsigned(address)));
-                END IF;
+		--elsiF falling_edge(clk) THEN  
+		 --	IF re='1' THEN
+                 --              dataOut(15 downto 0) <= Mem(to_integer(unsigned(address)));
+                  --             dataOut(31 downto 16) <= Mem(to_integer(unsigned(address))+1);
+              		-- END IF;
+		--END IF;
+                
 END PROCESS;
-
+                               dataOut(15 downto 0) <= Mem(to_integer(unsigned(address))) when re='1';
+                               dataOut(31 downto 16) <= Mem(to_integer(unsigned(address))+1) when re='1';
 END arch_Mem;

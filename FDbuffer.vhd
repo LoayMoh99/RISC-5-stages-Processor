@@ -4,10 +4,10 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY FDbuffer IS
 PORT    (
-Instruction: IN std_logic_vector(31 downto 0);
+Instruction,inportIN: IN std_logic_vector(31 downto 0);
 PC: IN std_logic_vector(31 downto 0);
 Clk,Stall,Flush :in std_logic;
-OutInstruction: OUT std_logic_vector(31 downto 0);
+OutInstruction,inportOUT: OUT std_logic_vector(31 downto 0);
 OutPC: OUT std_logic_vector(31 downto 0));
 
 END ENTITY FDbuffer;
@@ -38,5 +38,6 @@ begin
 enable <= not Stall;
 
 PC1: LoayregisterFalling Generic map(32) PORT MAP(PC,Clk,reset,enable,OutPC);
+inport: LoayregisterFalling generic map(32) port map(inportIN,clk,flush,'1',inportOUT);
 Inst1: Flushreg PORT MAP(Instruction,Clk,Flush,enable,OutInstruction);
 END arch_FDbuffer;

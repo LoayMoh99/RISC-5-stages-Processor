@@ -26,11 +26,11 @@ elsif  rising_edge(clkk) then
 		elsif carryenable="11" then
 			outflags(1)<='1';
 		elsif carryenable="10" then
-			if branchtype="01" then
+			if branchtype="01" then --Z-flag
 				outflags(0) <= '0';
-			elsif branchtype="10" then
+			elsif branchtype="10" then --C-flag
 				outflags(1) <= '0';
-			elsif branchtype="11" then
+			elsif branchtype="11" then --N-flag
 				outflags(2) <= '0';
 			end if;
 		end if;

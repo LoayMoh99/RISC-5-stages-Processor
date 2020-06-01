@@ -26,9 +26,9 @@ signal currFetchIsMem: std_logic:='0'; --0-> not mem or 1->mem
 signal sel: std_logic_vector(2 downto 0);--sel which counter works.. 
 
 Begin
-Process(clk,INT,Reset,op_code(4 downto 0),Rsrc,Rdst) is
+Process(clk,INT,Reset,op_code(4 downto 0)) is
 begin
-if falling_edge(clk) then
+if rising_edge(clk) then
 	if counter/="000" then
 		counter<= to_unsigned((to_integer(counter))-1,3);
 	end if;
@@ -36,53 +36,64 @@ end if;
 
 --reset
 if Reset='1' then
-	counter<="001";
+	counter<="010";
 	sel<="000";
 --interrupt
 elsif INT='1' then
 	compNormal<="11";--comp normally the curr fetched instr..
 	counter<="101";
-	INT1<='1';
+	--INT1<='1';
 	sel<="001";
 --call
 elsif op_code(4 downto 0)="10011" then
-	counter<="010";
-	sel<="001";
+   if counter/= "001" then
+	counter<="001";
+	sel<="010";
+   end if;
 --ret
 elsif op_code(4 downto 0)="11110" then
-	counter<="011";
+   if counter/= "011" then
+	counter<="100";
 	sel<="011";
+   end if;
 --rti
 elsif op_code(4 downto 0)="11111" then
-	counter<="011";
+   if counter/= "011" then
+	counter<="100";
 	sel<="100";
+   end if;
 elsif counter="000" then
 	sel<="111";
 end if;
-
+------ReseT------
    if sel="000" then --reset
+	--BranchEN<='0';regWrite<='0';regWrite2<='0';OUTportEN<='0';memRead<='0';memWrite<='0';StackEN<='0';
+	--CarryEN<="00";WBdataSrc <="00";
 	compNormal<="00";
-	if counter="001" then
+	if counter="010" then
 		StallCU<='1'; 
 		F_Flush<='1'; 
+		Reset1<='0'; 
+	MemSrcData <="10";
+	CallEn <='0';
+	INT1<='0'; 
+	WrFlags<='0';
+	ChangePC<='0';
+	elsif counter="001" then
+		StallCU<='0'; 
+		F_Flush<='0'; 
 		Reset1<='1'; 
 	MemSrcData <="10";
 	CallEn <='0';
 	INT1<='0'; 
 	WrFlags<='0';
 	ChangePC<='0';
---	elsif counter="001" then
-	--	 F_Flush<='1'; 
-	--	 Reset1<='0'; 
-	--MemSrcData <="10";
-	--StallCU<='0'; 
-	--INT1<='0'; 
-	--WrFlags<='0';
-	--ChangePC<='0';
 	else sel<="111";
 	end if;
-
+----------INT-----------
    elsif sel="001" then --int
+	--BranchEN<='0';regWrite<='0';regWrite2<='0';OUTportEN<='0';
+	--CarryEN<="00";WBdataSrc <="00";
 	if counter="101" then --pc to be pushed in FD buffer
 		 compNormal<="11";
 		 INT1<='1';
@@ -91,6 +102,7 @@ end if;
 			currFetchIsMem<='1';
 		else 	currFetchIsMem<='0';
 		end if;
+	--memRead<='0';memWrite<='0';StackEN<='0';
 	elsif counter="100" then --pc to be pushed in DE buffer
 	compNormal<="00";
 		 StallCU<='1';
@@ -101,9 +113,9 @@ end if;
 	Reset1<='0'; 
 	WrFlags<='0';
 	ChangePC<='0';
+	--memRead<='0';memWrite<='0';StackEN<='0';
+	-----------
 	elsif counter="011" then
---if (CurrFetInstr was Memory Instruction) -> StallCU=1 && F-Flush=1
---Else ->? Push flags
 		if currFetchIsMem='1' then
 			StallCU<='1'; 
 		else 	
@@ -118,11 +130,12 @@ end if;
 	compNormal<="00";
 	INT1<='0';
 	INT2<='0'; 
-	F_Flush<='1'; 
+	F_Flush<='0'; --
 	CallEn <='0';
 	Reset1<='0'; 
 	WrFlags<='0';
 	ChangePC<='0';
+	-------------
 	elsif counter="010" then
 		if currFetchIsMem='1' then
 			--push flags
@@ -150,6 +163,7 @@ end if;
  	Reset1<='0'; 
 	WrFlags<='0';
 	ChangePC<='0';
+	------------
 	elsif counter="001" then
 		if currFetchIsMem='1' then
 			--push pc
@@ -162,6 +176,7 @@ end if;
 			compNormal<="00";
 		else 	
 			compNormal<="10";
+			--memRead<='0';memWrite<='0';StackEN<='0';
 		end if;
 	F_Flush<='0'; 
 	INT1<='0'; 
@@ -172,13 +187,14 @@ end if;
 	ChangePC<='0';
 	else sel<="111";
 	end if;
-
+--------CALL-------------
     elsif sel="010" then --call
-	compNormal<="00";
+	--BranchEN<='0';regWrite<='0';regWrite2<='0';OUTportEN<='0';
+	--CarryEN<="00";WBdataSrc <="00";
+	--compNormal<="00";
 	if counter="001" then
 		 StallCU<='1'; 
-		 F_Flush<='1'; 
-		 CallEn <='1';
+		 F_Flush<='0'; 
 		 StackEn<='1';--push pc
 		 StackAddr<='0';
 		 MemSrcData<="00"; --pc
@@ -189,12 +205,26 @@ end if;
 	INT2<='0';  
 	WrFlags<='0';
 	ChangePC<='0';
-	else sel<="111";
+	CallEn <='1';
+--	elsif counter="001" then
+--		 StallCU<='0'; 
+--		 CallEn <='0';
+--		 F_Flush<='1'; 
+--		 StackEn<='0';
+--	Reset1<='0'; 
+--	INT1<='0'; 
+--	INT2<='0';  
+--	WrFlags<='0';
+--	ChangePC<='0';
+	else 	sel<="111";
+		StallCU<='0';
 	end if;
-
+---------RET-------------
     elsif sel="011" then --ret
+	--BranchEN<='0';regWrite<='0';regWrite2<='0';OUTportEN<='0';
+	--CarryEN<="00";WBdataSrc <="00";
 	compNormal<="00";
-	if counter="011" then
+	if counter="100" then
 		 StallCU<='1'; 
 		 F_Flush<='1'; 
 		 StackEn<='1'; --pop pc	 
@@ -207,7 +237,7 @@ end if;
 	INT2<='0';   
 	WrFlags<='0';
 	ChangePC<='0';
-	elsif counter="010" then
+	elsif counter="011" then
 		 StallCU<='1'; 
 		 F_Flush<='1'; 	
 	MemSrcData <="10";
@@ -217,6 +247,16 @@ end if;
 	INT2<='0';   
 	WrFlags<='0';
 	ChangePC<='0';
+	elsif counter="010" then
+		 StallCU<='1'; 
+		 F_Flush<='1';
+		 ChangePC<='1'; 	
+	MemSrcData <="10";
+	CallEn <='0';
+	Reset1<='0'; 
+	INT1<='0';
+	INT2<='0';   
+	WrFlags<='0';
 	elsif counter="001" then
 		 StallCU<='1'; 
 		 F_Flush<='0';
@@ -229,10 +269,12 @@ end if;
 	WrFlags<='0';
 	else sel<="111";
 	end if;
-
+----------RTI--------------
     elsif sel="100" then --rti
+	--BranchEN<='0';regWrite<='0';regWrite2<='0';OUTportEN<='0';
+	--CarryEN<="00";WBdataSrc <="00";
 	compNormal<="00";
-	if counter="011" then
+	if counter="100" then
 		 StallCU<='1'; 
 		 F_Flush<='1'; 
 		 StackEn<='1'; --pop pc	
@@ -245,7 +287,7 @@ end if;
 	INT2<='0';   
 	WrFlags<='0';
 	ChangePC<='0';
-	elsif counter="010" then
+	elsif counter="011" then
 		 StallCU<='1'; 
 		 F_Flush<='1'; 	
 		 StackEn<='1'; --pop flags	
@@ -258,9 +300,9 @@ end if;
 	INT2<='0';   
 	WrFlags<='0';
 	ChangePC<='0';
-	elsif counter="001" then
+	elsif counter="010" then
 		 StallCU<='1'; 
-		 F_Flush<='0';
+		 F_Flush<='1';
 		 ChangePC<='1'; 
 		 CarryEn<="01";
 		 WrFlags<='1';
@@ -269,6 +311,16 @@ end if;
 	Reset1<='0'; 
 	INT1<='0';
 	INT2<='0';   
+	elsif counter="001" then
+		 StallCU<='1'; 
+		 F_Flush<='0';
+		 ChangePC<='1'; 	
+	MemSrcData <="10";
+	CallEn <='0';
+	Reset1<='0'; 
+	INT1<='0';
+	INT2<='0';   
+	WrFlags<='0';
 	else sel<="111";
 	end if;
    else 
@@ -276,21 +328,21 @@ end if;
    end if;
 
    if counter="000" or compNormal(1) ='1' then
---bn clear all the special flags that is used by Special instr and events..
-	MemSrcData <="10";
+--bn clear all the special signals that is used by Special instr and events..
 	StallCU<='0'; 
 	F_Flush<='0';
 	CallEn <='0';
 	Reset1<='0'; 
 	WrFlags<='0';
 	ChangePC<='0';
-
+ MemSrcData <="10";
+end if;
 	if compNormal(1)='0' then 	
 	 	INT1<='0';
 		INT2<='0'; 
 	end if;
 --Here is the declaring of all the control signals by the op_code of the instructions..
-	if op_code(4)='0' OR op_code(4 downto 0)="10000" then
+	if op_code(4)='0' OR op_code(4 downto 0)="10000" OR op_code(4 downto 0)="11001" OR op_code(4 downto 0)="11100"then
 		ALUop<='0';
 	else 	ALUop<='1';
 	end if;
@@ -340,7 +392,7 @@ end if;
 	else 	WBdataSrc<="00";
 	end if;
 ----------------------------------------------------------------------------------
-	if (op_code(4 downto 1)="0101" OR op_code(4 downto 2)="101" OR op_code(4 downto 0)="01100" OR op_code(4 downto 0)="10000" OR op_code(4 downto 0)="11001" OR op_code(4 downto 0)="11100")='1' then
+	if (op_code(4 downto 1)="0101" OR op_code(4 downto 2)="101" OR op_code(4 downto 0)="01100" OR op_code(4 downto 0)="10000" OR op_code(4 downto 0)="11001" OR op_code(4 downto 0)="11100") then
 		regWrite<='0';
 	else 	regWrite<='1';
 	end if;
@@ -352,7 +404,10 @@ end if;
 ----------------------------------------------------------------------------------
 	if (op_code(4 downto 0)="11000" OR op_code(4 downto 0)="11101") then
 		memTOreg<='0';
-	else 	memTOreg<='1';
+		memRead<='1';
+	else 	
+		memTOreg<='1';
+		memRead<='0';
 	end if;
 ----------------------------------------------------------------------------------
 	if op_code(4 downto 0)="01100" then
@@ -360,14 +415,11 @@ end if;
 	else 	OUTportEN<='0';
 	end if;
 ----------------------------------------------------------------------------------
-	if (op_code(4 downto 0)="11000" OR op_code(4 downto 0)="11101") then
-		memRead<='1';
-	else 	memRead<='0';
-	end if;
-----------------------------------------------------------------------------------
 	if (op_code(4 downto 0)="11001" OR op_code(4 downto 0)="11100") then
 		memWrite<='1';
-	else 	memWrite<='0';
+		--MemSrcData <="11";
+	else 	--MemSrcData <="10";
+		memWrite<='0';
 	end if;
    end if;
 ----------------------------------------------------------------------------------

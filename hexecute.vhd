@@ -8,7 +8,7 @@ pcin,regfiledata1,ALUoutmem,WBdata,regfiledata2,immvaluein,effaddin,readdatafrom
 BRenable,Rst,clk: IN std_logic;
 BRtype,forwardA,forwardB,carryenab: IN std_logic_vector (1 downto 0);
 Rdestin,Rdest2in: IN std_logic_vector (2 downto 0);
-instr: IN std_logic_vector (3 downto 0); --instruction[3,0]
+instr: IN std_logic_vector (4 downto 0); --instruction[4,0]
 ALUOP,wrflags: IN std_logic;
 flags,pcout,effaddout,ALUout,DATASWAP,PCJMP,BRANCH,toOUTPORT: OUT std_logic_vector (n-1 downto 0); --PCJMP IN THE DECODE STAGE
 --BRANCH IN FETCH STAGE
@@ -22,7 +22,7 @@ generic(n: integer :=32);
 port(
 in1,in2: IN std_logic_vector (n-1 downto 0);
 
-sel: IN std_logic_vector (3 downto 0);
+sel: IN std_logic_vector (4 downto 0);
 
 outALU: OUT std_logic_vector (n-1 downto 0);
 flagout: OUT std_logic_vector (3 downto 0)); ---zawdtha 3ashan output lel ccr
@@ -77,8 +77,9 @@ IS Port (
 End component;
 signal temp1 ,temp2 : std_logic_vector (31 downto 0);
 signal out2mux2toALU ,out1mux2toALU : std_logic_vector (31 downto 0);
-signal outmux2x1,flagsoutfromALU ,outofzeroextract,inflagstoccr,OUTflagsfromccr: std_logic_vector (3 downto 0);
+signal flagsoutfromALU ,outofzeroextract,inflagstoccr,OUTflagsfromccr: std_logic_vector (3 downto 0);
 signal outflagtobr : std_logic;
+signal outmux2x1: std_logic_vector (4 downto 0);
 begin
 -- 2nd mux to alu
 MUX421 : Mux4x1 GENERIC MAP(n) port map(regfiledata2,immvaluein,ALUoutmem,WBdata,forwardB,temp1);
@@ -86,16 +87,17 @@ out2mux2toALU<=temp1;
 DATASWAP<=temp1;
 
 --1st mux to alu
-MUX311 : Mux4x1 GENERIC MAP(n) port map(regfiledata1,x"00000000",ALUoutmem,WBdata,forwardA,temp2);
+MUX311 : Mux4x1 GENERIC MAP(n) port map(regfiledata1,regfiledata1,ALUoutmem,WBdata,forwardA,temp2);
 out1mux2toALU<=temp2;
 PCJMP<=temp2;
 toOUTPORT<=temp2;
 BRANCH<=temp2;
 
+
 -- ALU
 ALU1: ALU GENERIC MAP(n) port map (out1mux2toALU,out2mux2toALU,outmux2x1,ALUout,flagsoutfromALU);
 --mux 2x1 as a selector to ALU func
-muxselector: mux1 GENERIC MAP(4) port map(instr,"0000",ALUOP,outmux2x1);
+muxselector: mux1 GENERIC MAP(5) port map(instr,"00000",ALUOP,outmux2x1);
 
 --flags from alu to mux 2x1
 MUX2x1fromalu: mux1 GENERIC MAP(4) port map(flagsoutfromALU,outofzeroextract,wrflags,inflagstoccr);
@@ -106,7 +108,7 @@ CCR1 :  CCRregister  port map (inflagstoccr ,clk ,Rst,carryenab,BRtype,OUTflagsf
 --ccr1: CCRregister 
 zeroextend1: ZEROEXTEND port map (OUTflagsfromccr,flags);
 --flags to mux4x1
-MUX423 : Mux4x11 port map(OUTflagsfromccr(0),OUTflagsfromccr(1),OUTflagsfromccr(2),'1',BRtype,outflagtobr);
+MUX423 : Mux4x11 port map('1',OUTflagsfromccr(0),OUTflagsfromccr(1),OUTflagsfromccr(2),BRtype,outflagtobr);
 
 BRTAKEN <= ( outflagtobr AND BRenable);
 pcout<=pcin;

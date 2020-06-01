@@ -5,7 +5,7 @@ Entity decodingpart is
 Generic(n:integer :=32);
 PORT( instr: in std_logic_vector(31 downto 0);
 wb: in std_logic_vector(31 downto 0); --from WB stage
-inport:in std_logic_vector(31 downto 0); --from in device
+inport,immValIN:in std_logic_vector(31 downto 0); --from in device
 wbdatasrc: in std_logic_vector(1 downto 0); --from control unit to mux
 wreg1:in std_logic_vector(2 downto 0);
 wreg2:in std_logic_vector(2 downto 0);
@@ -18,11 +18,11 @@ branchtaken: in std_logic; --control signal for 2*1 mux
 pcout: out std_logic_vector(n-1 downto 0); --for mux 2*1
 dataout1:out std_logic_vector(n-1 downto 0);
 dataout2:out std_logic_vector(n-1 downto 0); 
-instout1: out std_logic_vector(3 downto 0); --3 downto 0
+instout1: out std_logic_vector(4 downto 0); --3 downto 0
 instout2: out std_logic_vector(2 downto 0); --10 downto 8
 instout3: out std_logic_vector(2 downto 0); --13 downto 11
 instout4: out std_logic_vector(2 downto 0); --7 down to 5
-effectiveaddress: out std_logic_vector(31 downto 0));
+effectiveaddress,immValOUT: out std_logic_vector(31 downto 0));
 end decodingpart;
 
 
@@ -80,11 +80,12 @@ Signal dataout1Temp,dataout2Temp: std_logic_vector(31 downto 0); --Signal to wbD
 Begin
 z1: zeroextend1 port map(instr(26 downto 11), fromzeroextend1); --out to mux4*1 and out
 z2: zeroextend2 port map(instr(30 downto 11), effectiveaddress); --out
+immValOUT<=fromzeroextend1;
 -------------------------
 
 frommux<=wb when wbdatasrc="00" 
 	else inport when wbdatasrc="01"
-	else fromzeroextend1 when wbdatasrc="10";
+	else immValIN when wbdatasrc="10";
 --------------------------
 rf: regsfile generic map(n) port map (instr(10 downto 8),instr(13 downto 11),wreg1,wreg2,frommux,wdata2,rwsignal1,rwsignal2,clk,rstsignal,dataout1Temp,dataout2Temp);
 ---------------------------
@@ -92,7 +93,7 @@ m2: mux2 generic map(n) port map (pcin,pcjump,branchtaken,pcout); --????
 ---------------------------
 dataout1 <=dataout1Temp;
 dataout2 <=dataout2Temp;
-instout1 <= instr(3 downto 0);
+instout1 <= instr(4 downto 0);
 instout2 <= instr(10 downto 8);
 instout3 <= instr(13 downto 11);
 instout4 <= instr(7 downto 5);

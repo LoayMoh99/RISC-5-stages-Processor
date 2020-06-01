@@ -6,6 +6,8 @@ port( pcin: in std_logic_vector(31 downto 0);
      outflagsfrom0extendin: in std_logic_vector(31 downto 0);
     effectiveaddressin,ALUOUTin,DataSwapin: in std_logic_vector(31 downto 0);
     Rdest2in,Rdestin :in std_logic_vector(2 downto 0);
+inportIN: in std_logic_vector(31 downto 0);
+immIN: in std_logic_vector(31 downto 0);
  -------------------------------------------------------------------------------------------------
 clk: in std_logic;
 flush: in std_logic; 
@@ -19,14 +21,16 @@ flush: in std_logic;
 --MEMWrite ===> outmem(3)   
 --stackEnable ===>outmem(4)
 --------------------------------------------------------------
-inputWB:in std_logic_vector(3 downto 0);
+inputWB:in std_logic_vector(5 downto 0);
 inputMEM:in std_logic_vector(7 downto 0);
 outMEM:out std_logic_vector(7 downto 0);
-outputWB:out std_logic_vector(3 downto 0);
+outputWB:out std_logic_vector(5 downto 0);
 --------------------------------------------------------------------------------------------
 pcout: OUT std_logic_vector(31 downto 0);
 outflagsfrom0extendout: OUT std_logic_vector(31 downto 0);
 effectiveaddressout,ALUOUTout,DataSwapout: OUT std_logic_vector(31 downto 0);
+inportOUT: out std_logic_vector(31 downto 0);
+immOUT: out std_logic_vector(31 downto 0);
 Rdest2out,Rdestout :out std_logic_vector(2 downto 0));
 end bufferr;
 
@@ -53,11 +57,8 @@ RDESS2: LoayregisterFalling GENERIC MAP(3) port map( Rdest2in,clk,flush,enable, 
 RDESS1: LoayregisterFalling GENERIC MAP(3) port map( Rdestin,clk,flush,enable, Rdestout);
 SWAP: LoayregisterFalling GENERIC MAP(32) port map(DataSwapin,clk,flush,enable, DataSwapout);
 mem: LoayregisterFalling GENERIC MAP(8) port map(inputMEM,clk,flush,enable, outMEM);
-WB:LoayregisterFalling GENERIC MAP(4) port map(inputWB,clk,flush,enable, outputWB);
-
-
-
-
-
+WB:LoayregisterFalling GENERIC MAP(6) port map(inputWB,clk,flush,enable, outputWB);
+inport: LoayregisterFalling generic map(32) port map(inportIN,clk,flush,'1',inportOUT);
+immVal: LoayregisterFalling generic map(32) port map(immIN,clk,flush,'1',immOUT);
 
 end bufferarch;

@@ -78,9 +78,9 @@ signal FirstThreeBitodOPcode: std_logic_vector(2 downto 0);
 Signal InstructionbitsTemp: std_logic_vector(n-1 downto 0):=x"00000000";
 
 begin
-FirstThreeBitodOPcode<= InstructionbitsTemp(2 downto 0);
-notFirstThirdBitodOPcode <= NOT FirstThreeBitodOPcode(2);
-ToAddOneorTwo <= FirstThreeBitodOPcode(0) AND FirstThreeBitodOPcode(1) AND notFirstThirdBitodOPcode;
+FirstThreeBitodOPcode<= InstructionbitsTemp(4 downto 2);
+notFirstThirdBitodOPcode <= NOT FirstThreeBitodOPcode(0);
+ToAddOneorTwo <= FirstThreeBitodOPcode(2) AND FirstThreeBitodOPcode(1) AND notFirstThirdBitodOPcode;
 IntReset <= Int2 OR Reset2;
 Stall <= StallCU OR StallHU;
 --selcmux1 <= Stall & ToAddOneorTwo;

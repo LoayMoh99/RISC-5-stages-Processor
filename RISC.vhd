@@ -26,10 +26,10 @@ END component;
 ------------------------------------------------------------------
 component FDbuffer IS
 PORT    (
-Instruction: IN std_logic_vector(31 downto 0);
+Instruction,inportIN: IN std_logic_vector(31 downto 0);
 PC: IN std_logic_vector(31 downto 0);
 Clk,Stall,Flush :in std_logic;
-OutInstruction: OUT std_logic_vector(31 downto 0);
+OutInstruction,inportOUT: OUT std_logic_vector(31 downto 0);
 OutPC: OUT std_logic_vector(31 downto 0));
 
 END component;
@@ -52,7 +52,7 @@ component decodingpart is
 Generic(n:integer :=32);
 PORT( instr: in std_logic_vector(31 downto 0);
 wb: in std_logic_vector(31 downto 0); --from WB stage
-inport:in std_logic_vector(31 downto 0); --from in device
+inport,immValIN:in std_logic_vector(31 downto 0); --from in device
 wbdatasrc: in std_logic_vector(1 downto 0); --from control unit to mux
 wreg1:in std_logic_vector(2 downto 0); 
 wreg2:in std_logic_vector(2 downto 0);
@@ -65,17 +65,17 @@ branchtaken: in std_logic; --control signal for 2*1 mux
 pcout: out std_logic_vector(n-1 downto 0); --for mux 2*1
 dataout1:out std_logic_vector(n-1 downto 0);
 dataout2:out std_logic_vector(n-1 downto 0); 
-instout1: out std_logic_vector(3 downto 0); --3 downto 0
+instout1: out std_logic_vector(4 downto 0); --4 downto 0
 instout2: out std_logic_vector(2 downto 0); --10 downto 8
 instout3: out std_logic_vector(2 downto 0); --13 downto 11
 instout4: out std_logic_vector(2 downto 0); --7 down to 5
-effectiveaddress: out std_logic_vector(31 downto 0));
+effectiveaddress,immValOUT: out std_logic_vector(31 downto 0));
 end component ;
 ------------------------------------------------------------------
 component decExBuffer is
 Generic(n:integer :=32);
 port( pcin: in std_logic_vector(n-1 downto 0);
-instrin: in std_logic_vector(3 downto 0);
+instrin: in std_logic_vector(4 downto 0);
 srcreg1in: in std_logic_vector(2 downto 0);
 srcreg2in: in std_logic_vector(2 downto 0);
 destregin: in std_logic_vector(2 downto 0);
@@ -85,13 +85,14 @@ datareg1in: in std_logic_vector(n-1 downto 0);
 datareg2in: in std_logic_vector(n-1 downto 0);
 exesignalin: in std_logic_vector(7 downto 0); --from control unit
 memsignalin: in std_logic_vector(7 downto 0);  --from control unit
-wbsignalin: in std_logic_vector(3 downto 0);   --from control unit
+wbsignalin: in std_logic_vector(5 downto 0);   --from control unit
+inportIN: in std_logic_vector(n-1 downto 0);
 -----------------------------------------------
 clk: in std_logic;
 flush: in std_logic; 
 -----------------------------------------------
 pcout: out std_logic_vector(n-1 downto 0);
-instrout: out std_logic_vector(3 downto 0);
+instrout: out std_logic_vector(4 downto 0);
 srcreg1out: out std_logic_vector(2 downto 0);
 srcreg2out: out std_logic_vector(2 downto 0);
 destregout: out std_logic_vector(2 downto 0);
@@ -101,7 +102,8 @@ datareg1out: out std_logic_vector(n-1 downto 0);
 datareg2out: out std_logic_vector(n-1 downto 0);
 exesignalout: out std_logic_vector(7 downto 0); 
 memsignalout: out std_logic_vector(7 downto 0); 
-wbsignalout: out std_logic_vector(3 downto 0)
+inportOUT: out std_logic_vector(n-1 downto 0);
+wbsignalout: out std_logic_vector(5 downto 0)
 );
 end component ;
 ------------------------------------------------------------------
@@ -112,7 +114,7 @@ pcin,regfiledata1,ALUoutmem,WBdata,regfiledata2,immvaluein,effaddin,readdatafrom
 BRenable,Rst,clk: IN std_logic;
 BRtype,forwardA,forwardB,carryenab: IN std_logic_vector (1 downto 0);
 Rdestin,Rdest2in: IN std_logic_vector (2 downto 0);
-instr: IN std_logic_vector (3 downto 0); --instruction[3,0]
+instr: IN std_logic_vector (4 downto 0); --instruction[4,0]
 ALUOP,wrflags: IN std_logic;
 flags,pcout,effaddout,ALUout,DATASWAP,PCJMP,BRANCH,toOUTPORT: OUT std_logic_vector (n-1 downto 0); --PCJMP IN THE DECODE STAGE
 --BRANCH IN FETCH STAGE
@@ -125,19 +127,23 @@ port( pcin: in std_logic_vector(31 downto 0);
      outflagsfrom0extendin: in std_logic_vector(31 downto 0);
     effectiveaddressin,ALUOUTin,DataSwapin: in std_logic_vector(31 downto 0);
     Rdest2in,Rdestin :in std_logic_vector(2 downto 0);
+inportIN: in std_logic_vector(31 downto 0);
  ---------------------------------------------
 clk: in std_logic;
 flush: in std_logic; 
 --changePC: out std_logic;
 -----------------------------------------
-inputWB:in std_logic_vector(3 downto 0); 
+inputWB:in std_logic_vector(5 downto 0); 
 inputMEM:in std_logic_vector(7 downto 0);
+immIN: in std_logic_vector(31 downto 0);
+immOUT: out std_logic_vector(31 downto 0);
 outMEM:out std_logic_vector(7 downto 0);
-outputWB:out std_logic_vector(3 downto 0);
+outputWB:out std_logic_vector(5 downto 0);
 --------------------------------------------
 pcout: OUT std_logic_vector(31 downto 0);
 outflagsfrom0extendout: OUT std_logic_vector(31 downto 0);
 effectiveaddressout,ALUOUTout,DataSwapout: OUT std_logic_vector(31 downto 0);
+inportOUT: out std_logic_vector(31 downto 0);
 Rdest2out,Rdestout :out std_logic_vector(2 downto 0));
 end component; 
 ------------------------------------------------------------------
@@ -174,17 +180,20 @@ dataswaps: in std_logic_vector(n-1 downto 0);
 aluoutp: in std_logic_vector(n-1 downto 0);
 reg1: in std_logic_vector(2 downto 0);
 reg2: in std_logic_vector(2 downto 0);
-towbsignal: in std_logic_vector(3 downto 0);
+towbsignal: in std_logic_vector(5 downto 0);
+inportIN: in std_logic_vector(n-1 downto 0);
 ----------------------
 clk,flush: in std_logic;
+immIN: in std_logic_vector(31 downto 0);
+immOUT: out std_logic_vector(31 downto 0);
 ----------------------
-
+inportOUT: out std_logic_vector(n-1 downto 0);
 readdataout:out std_logic_vector(n-1 downto 0);
 dataswapsout: out std_logic_vector(n-1 downto 0);
 aluoutpout: out std_logic_vector(n-1 downto 0);
 reg1out: out std_logic_vector(2 downto 0);
 reg2out: out std_logic_vector(2 downto 0);
-fromwbsignal: out std_logic_vector(3 downto 0)
+fromwbsignal: out std_logic_vector(5 downto 0)
 );
 
 end component; 
@@ -234,20 +243,21 @@ signal PC:std_logic_vector(31 downto 0);
 --out mn F/D buffer 
 signal OutInstruction:std_logic_vector(31 downto 0);   
 signal OutPC_FD:std_logic_vector(31 downto 0); 
+signal INport_FD:std_logic_vector(31 downto 0); 
 ------------------------------------------------------------------mn awel hena nezwd
 --out from dec stage  
 signal dataOut1:std_logic_vector(31 downto 0);
 signal PC_outDU:std_logic_vector(31 downto 0);
 signal dataOut2:std_logic_vector(31 downto 0);
 signal immValue,effectiveaddressDec: std_logic_vector(31 downto 0);
-signal instout1:std_logic_vector(3 downto 0);
+signal instout1:std_logic_vector(4 downto 0);
 signal instout2:std_logic_vector(2 downto 0);
 signal instout3:std_logic_vector(2 downto 0);
 signal instout4:std_logic_vector(2 downto 0);
 
 --out from D/E buffer 
 signal OutPC_DE:std_logic_vector(31 downto 0); 
-signal instrOut: std_logic_vector(3 downto 0);
+signal instrOut: std_logic_vector(4 downto 0);
 signal srcreg1Out: std_logic_vector(2 downto 0);
 signal srcreg2Out: std_logic_vector(2 downto 0);
 signal destregOut: std_logic_vector(2 downto 0);
@@ -257,7 +267,8 @@ signal datareg1Out: std_logic_vector(31 downto 0);
 signal datareg2Out:std_logic_vector(31 downto 0); 
 signal exesignalOut: std_logic_vector(7 downto 0); --mariam
 signal memsignalOut:std_logic_vector(7 downto 0);  --mariam 
-signal wbsignalOut :std_logic_vector(3 downto 0);  --mariam
+signal wbsignalOut :std_logic_vector(5 downto 0);  --mariam
+signal INport_DE:std_logic_vector(31 downto 0); 
 
 
 --out from exec stage
@@ -276,7 +287,7 @@ signal Rdest2Out:std_logic_vector (2 downto 0);
 
 --out from E/M buffer 
 signal OutMem:std_logic_vector(7 downto 0);
-signal OutputWB: std_logic_vector(3 downto 0);
+signal OutputWB: std_logic_vector(5 downto 0);
 signal OutPC_EM:std_logic_vector(31 downto 0); 
 signal Outflagsfrom0extendout :std_logic_vector(31 downto 0);
 signal EffectiveaddressOut:std_logic_vector(31 downto 0);
@@ -284,6 +295,7 @@ signal AluOUTout:std_logic_vector(31 downto 0);
 signal DataSWAPOUT:std_logic_vector(31 downto 0);
 signal Rdest2OUTm:std_logic_vector(2 downto 0);
 signal RdestOUTm:std_logic_vector(2 downto 0);
+signal INport_EM,immEM:std_logic_vector(31 downto 0); 
 
 --out from mem stage
 signal ReadOutMem:std_logic_vector(31 downto 0);
@@ -297,10 +309,11 @@ signal wReg1,wReg2:std_logic_vector(2 downto 0);
 signal wDataSwap:std_logic_vector(31 downto 0);
 signal ReadOutMemData: std_logic_vector(31 downto 0);
 signal AlUouttowb :std_logic_vector(31 downto 0);
+signal INport_MW,immMW:std_logic_vector(31 downto 0); 
 
 --out from wb stage
 signal WBDATAA:std_logic_vector(31 downto 0);
-signal WBsignalss:std_logic_vector(3 downto 0);
+signal WBsignalss:std_logic_vector(5 downto 0);
 
 begin
 --fetch unit (d)
@@ -328,6 +341,8 @@ PC=>PC,
 Clk=>clk,
 Stall=>stallFDbuffer,
 Flush => flushFDbuffer,
+inportIN=>INport ,
+inportOUT=>INport_FD ,
 OutInstruction=>OutInstruction,
 OutPC=>OutPC_FD);
 --------------------------------------------------------------------------------------
@@ -365,8 +380,8 @@ MemSrcData=> MemSrcData);
 
 ex_mem_wbSignals(7 downto 0)<=ALUsrc&ALUop&WrFlags&CarryEN&BrType&BranchEN;
 ex_mem_wbSignals(15 downto 8)<="00"&memWrite&memRead&MemSrcData&StackAddr&StackEN;
-ex_mem_wbSignals(19 downto 16)<='0'&memTOreg&regWrite2&regWrite;
-ex_mem_wbSignals(31 downto 20)<= (others=>'0');
+ex_mem_wbSignals(21 downto 16)<='0'&WBdataSrc&memTOreg&regWrite2&regWrite;
+ex_mem_wbSignals(31 downto 22)<= (others=>'0');
 
 
 ------------------Mux of signals ------------------------------------
@@ -378,8 +393,9 @@ outMx =>  ex_mem_wbSignalsOutMux   );
 --decoding unit
 DEC_stage:  decodingpart generic map(n) port map(instr=>OutInstruction,
 wb=>WBDATAA,
-inport=>INport,
-wbdatasrc=> WBdataSrc,
+inport=>INport_MW,
+immValIN=>immMW ,
+wbdatasrc=> WBsignalss(4 downto 3) ,
 wreg1=> wReg1,
 wreg2=> wReg2,
 wdata2=>wDataSwap ,
@@ -397,6 +413,7 @@ instout1=> instout1   ,
 instout2=> instout2   ,
 instout3=> instout3   ,
 instout4=> instout4   ,
+immValOUT=>immValue ,
 effectiveaddress=> effectiveaddressDec);
   
 ---------------------------------------------------------------------------------------------
@@ -406,13 +423,15 @@ instrin => instout1    ,
 srcreg1in=> instout2   ,
 srcreg2in=> instout3   ,
 destregin=> instout4   ,
+inportIN=>INport_FD ,
+inportOUT=>INport_DE ,
 immvalin=> immValue,
 effaddrin=> effectiveaddressDec   ,
 datareg1in=> dataOut1 ,
 datareg2in=> dataOut2 ,
 exesignalin=> ex_mem_wbSignalsOutMux(7 downto 0), --mariam hena signals gayeen mn mux2*1 "control unit"
 memsignalin=>  ex_mem_wbSignalsOutMux(15 downto 8) ,  --mariam "control unit"
-wbsignalin=>  ex_mem_wbSignalsOutMux(19 downto 16) ,   --mariam "control unit"
+wbsignalin=>  ex_mem_wbSignalsOutMux(21 downto 16) ,   --mariam "control unit"
 clk=> clk,
 flush=> Reset,
 pcout=>OutPC_DE,
@@ -426,8 +445,7 @@ datareg1out=>  datareg1Out  ,
 datareg2out=>  datareg2Out  ,
 exesignalout=> exesignalOut   , --this is 8 bits divided into many signals "control unit"
 memsignalout=>  memsignalOut  , --this is 8 bits divided into many signals "control unit"
-wbsignalout=>  wbsignalOut  )--this is 4 bits divided into many signals  "control unit"
-;
+wbsignalout=>  wbsignalOut  );--this is 6 bits divided into many signals  "control unit"
 ----------------------------------------------------------------------------------------------
 --EXECUTE STAGE
 EXE_stage: EXECUTE generic map(n) port map(pcin=> OutPC_DE,
@@ -475,7 +493,10 @@ Rdest2in=>  Rdest2Out     ,  --asdak te swap??
 Rdestin =>  RdestOut    ,
 clk=> clk,
 flush=>Reset,
---changePC=> ChangePC    ,
+immIN=>immvalueOut ,
+immOUT=>immEM ,
+inportIN=>INport_DE ,
+inportOUT=>INport_EM ,
 inputWB=> wbsignalOut   , --dol input mn "control unit" ghaleban
 inputMEM=>  memsignalOut   , --dol input mn "control unit" ghaleban
 outMEM=>  OutMem   ,
@@ -517,6 +538,10 @@ dataswaps=>  dataswapOutm           ,
 aluoutp=>    aluOutput        ,
 reg1=>    R1        ,
 reg2=>    R2        ,
+immIN=>immEM ,
+immOUT=>immMW ,
+inportIN=> INport_EM,
+inportOUT=>INport_MW ,
 towbsignal=>  OutputWB , --"control signals"
 clk=>clk,
 flush=> Reset ,
@@ -532,7 +557,7 @@ fromwbsignal=>   WBsignalss ); --"control signals"
 wb_stagee: mux2  generic map(n) port map(in1=>  ReadOutMemData   ,
 in2=>  AlUouttowb     ,
 sel=>WBsignalss(2) ,  --control signal
-outMx =>  WBDATAA );
+outMx => WBDATAA );
 
 ----------------------------------------------------------------------------------------------------------
 end RISC_processor_arch;
