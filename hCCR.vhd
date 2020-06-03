@@ -5,7 +5,7 @@ Entity CCRregister is
 
 port (
 inflags:in std_logic_vector(3 downto 0);
-clkk,rstt:in std_logic;
+clkk,rstt,brTaken:in std_logic;
 carryenable: in std_logic_vector(1 downto 0);
 branchtype: in std_logic_vector(1 downto 0);
 outflags:out std_logic_vector(3 downto 0)); --for flags
@@ -18,14 +18,14 @@ Process(clkk,rstt,inflags,carryenable,branchtype)
 --but you have to put all it's inputs in the sensitivity list
 begin
 if(rstt ='1') then
-   outflags<= "1000";
+   outflags<= "0000";
 elsif  rising_edge(clkk) then
 	if (carryenable /="00") then
 		if carryenable="01" then
 			outflags<=inflags;
 		elsif carryenable="11" then
 			outflags(1)<='1';
-		elsif carryenable="10" then
+		elsif carryenable="10" and brTaken='1' then
 			if branchtype="01" then --Z-flag
 				outflags(0) <= '0';
 			elsif branchtype="10" then --C-flag

@@ -78,9 +78,10 @@ Signal frommux: std_logic_vector(31 downto 0);
 Signal dataout1Temp,dataout2Temp: std_logic_vector(31 downto 0); --Signal to wbData2(swap) f stage tanya and out
 
 Begin
-z1: zeroextend1 port map(instr(26 downto 11), fromzeroextend1); --out to mux4*1 and out
-z2: zeroextend2 port map(instr(30 downto 11), effectiveaddress); --out
-immValOUT<=fromzeroextend1;
+--z1: zeroextend1 port map(instr(26 downto 11), fromzeroextend1); --out to mux4*1 and out
+--z2: zeroextend2 port map(instr(30 downto 11), effectiveaddress); --out
+immValOUT<=x"0000"&instr(26 downto 11);
+effectiveaddress<=x"000"&instr(30 downto 11);
 -------------------------
 
 frommux<=wb when wbdatasrc="00" 
@@ -89,7 +90,7 @@ frommux<=wb when wbdatasrc="00"
 --------------------------
 rf: regsfile generic map(n) port map (instr(10 downto 8),instr(13 downto 11),wreg1,wreg2,frommux,wdata2,rwsignal1,rwsignal2,clk,rstsignal,dataout1Temp,dataout2Temp);
 ---------------------------
-m2: mux2 generic map(n) port map (pcin,pcjump,branchtaken,pcout); --????
+m2: mux2 generic map(n) port map (pcin,pcjump,branchtaken,pcout); 
 ---------------------------
 dataout1 <=dataout1Temp;
 dataout2 <=dataout2Temp;

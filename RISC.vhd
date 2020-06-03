@@ -37,7 +37,7 @@ END component;
 component ControlUnit is
 port( 
 --inputs:
-	clk,INT,Reset : IN std_logic;
+	clk,INT,Reset,rstCounter : IN std_logic;
         op_code : IN std_logic_vector(4 downto 0);
 	Rdst : IN std_logic_vector(2 downto 0); --Instr[7-5]
 	Rsrc : IN std_logic_vector(2 downto 0); --Instr[10-8]
@@ -45,7 +45,9 @@ port(
 	ALUop,ALUsrc,BranchEN,StackEN,StackAddr,regWrite,regWrite2,memTOreg,OUTportEN,memRead,memWrite : OUT std_logic;
 	CarryEN,BrType,WBdataSrc : OUT std_logic_vector(1 downto 0);
 	Reset1,CallEn,INT1,INT2,StallCU,F_Flush,WrFlags,ChangePC : OUT std_logic;
-	MemSrcData : OUT std_logic_vector(1 downto 0));
+	MemSrcData : OUT std_logic_vector(1 downto 0);
+	selOUT :out std_logic_vector(2 downto 0)
+);
 end component;
 ------------------------------------------------------------------
 component decodingpart is
@@ -197,6 +199,45 @@ fromwbsignal: out std_logic_vector(5 downto 0)
 );
 
 end component; 
+--------------------------------------------------------------------------------------------
+component HazardDetection is
+port(
+F_D_Rsrc1:in std_Logic_vector(2 downto 0); --first operand of current instruction
+F_D_Rsrc2:in std_logic_vector(2 downto 0); --second operand of current instruction
+D_E_Rdest:in std_Logic_vector(2 downto 0);--destination of the pervious instruction 
+D_E_Rdest2:in std_Logic_vector(2 downto 0);
+intSelec:in std_logic_vector(2 downto 0); -- INterrupt determination
+----------------------------------------------------------- 
+D_E_Mem_read:in std_logic; --control sgnal in memory stage
+Br_Taken,clk:in std_logic; --from AND gate
+------------------------------------------------------------
+F_flush:out std_logic; 
+D_flush:out std_logic;
+stall:out std_logic;
+resetCounter:out std_logic
+); 
+end component;
+-----------------------------------------
+component forwardingUnit is
+port(
+--Inputs--
+DErsrc1 : IN std_logic_vector (2 downto 0); 
+DErsrc2 : IN std_logic_vector (2 downto 0);
+EMrdst: IN std_logic_vector (2 downto 0);
+MWrdst: IN std_logic_vector (2 downto 0);
+EMrdst2: IN std_logic_vector (2 downto 0);
+MWrdst2: IN std_logic_vector (2 downto 0);
+EMregWr:IN std_logic ;
+MWregWr:IN std_logic ;
+EMregWr2:IN std_logic ;
+MWregWr2:IN std_logic ;
+ALUsrc:IN std_logic;
+--outputs--
+forwardA: OUT std_logic_vector (1 downto 0);
+forwardB: OUT std_logic_vector (1 downto 0);
+swapEn:out std_logic
+);
+END component;
 ------------------------------------------------------------------
 component mux2 is
 generic(n:integer :=32);
@@ -208,7 +249,6 @@ end component;
 ------------------------------------------------------------------
 --signals: 
 signal StallCU:std_logic;
-signal StallHU:std_logic :='0';
 signal ALUop:std_logic;
 signal ALUsrc:std_logic;
 signal BranchEN:std_logic;
@@ -227,14 +267,13 @@ signal Reset1:std_logic;
 signal CallEn:std_logic;
 signal INT1,INT2:std_logic;
 signal F_Flush:std_logic;
-signal FlushHaz:std_logic:='0';
 signal WrFlags:std_logic;
 signal ChangePC :std_logic;
+signal selCU:std_logic_vector(2 downto 0); 
 signal MemSrcData:std_logic_vector(1 downto 0); 
 signal stallFDbuffer:std_logic;
 signal flushFDbuffer:std_logic;
 signal ex_mem_wbSignals,ex_mem_wbSignalsOutMux :std_logic_vector(31 downto 0);
-signal D_Flush :std_logic:='0';
 
 --out mn FU   
 signal Instructionbits:std_logic_vector(31 downto 0);    	
@@ -244,7 +283,7 @@ signal PC:std_logic_vector(31 downto 0);
 signal OutInstruction:std_logic_vector(31 downto 0);   
 signal OutPC_FD:std_logic_vector(31 downto 0); 
 signal INport_FD:std_logic_vector(31 downto 0); 
-------------------------------------------------------------------mn awel hena nezwd
+
 --out from dec stage  
 signal dataOut1:std_logic_vector(31 downto 0);
 signal PC_outDU:std_logic_vector(31 downto 0);
@@ -276,11 +315,10 @@ signal branchEx:std_logic_vector(31 downto 0);
 signal BrEnExecute:std_logic;
 signal PC_outEU:std_logic_vector(31 downto 0);
 signal Flags : std_logic_vector(31 downto 0);
-signal AluOut:std_logic_vector(31 downto 0);
+signal AluOut,OUTportTemp:std_logic_vector(31 downto 0);
 signal EffaddOut:std_logic_vector(31 downto 0);
 signal DataSwap:std_logic_vector(31 downto 0);
 signal PcJump:std_logic_vector(31 downto 0);
-signal ToOutport:std_logic_vector(31 downto 0);
 signal RdestOut:std_logic_vector (2 downto 0);
 signal Rdest2Out:std_logic_vector (2 downto 0);
 
@@ -291,7 +329,7 @@ signal OutputWB: std_logic_vector(5 downto 0);
 signal OutPC_EM:std_logic_vector(31 downto 0); 
 signal Outflagsfrom0extendout :std_logic_vector(31 downto 0);
 signal EffectiveaddressOut:std_logic_vector(31 downto 0);
-signal AluOUTout:std_logic_vector(31 downto 0);
+signal AluOUTout,AluOutForwU,AluOutForwUFinal:std_logic_vector(31 downto 0);
 signal DataSWAPOUT:std_logic_vector(31 downto 0);
 signal Rdest2OUTm:std_logic_vector(2 downto 0);
 signal RdestOUTm:std_logic_vector(2 downto 0);
@@ -312,8 +350,19 @@ signal AlUouttowb :std_logic_vector(31 downto 0);
 signal INport_MW,immMW:std_logic_vector(31 downto 0); 
 
 --out from wb stage
-signal WBDATAA:std_logic_vector(31 downto 0);
+signal WBDATAA,WBdataFU:std_logic_vector(31 downto 0);
 signal WBsignalss:std_logic_vector(5 downto 0);
+
+--out from Forw Unit
+signal swapEn: std_logic;
+signal ForwardA:std_logic_vector(1 downto 0);
+signal ForwardB:std_logic_vector(1 downto 0);
+
+--out Haz Det unit
+signal ResetCounter: std_logic :='0';
+signal StallHU:std_logic :='0';
+signal FlushHaz:std_logic:='0';
+signal D_Flush,brtakenHU :std_logic:='0';
 
 begin
 --fetch unit (d)
@@ -329,7 +378,7 @@ Branch=> branchEx,
 PoppedPC=>ReadOutMem,
 PCsrc=>	BrEnExecute,
 ChangePC=>ChangePC,
-callRdst=>dataOut1,
+callRdst=>AluOutForwUFinal,
 Instructionbits=>Instructionbits,
 PC=>PC); 
 -----------------------------------------------------------------------------------
@@ -346,10 +395,29 @@ inportOUT=>INport_FD ,
 OutInstruction=>OutInstruction,
 OutPC=>OutPC_FD);
 --------------------------------------------------------------------------------------
+brtakenHU<=BrEnExecute or CallEn;
+--------------------------------------------------------------------------------------
+--Haz detection unit:
+HU: HazardDetection port map(
+F_D_Rsrc1=>OutInstruction(10 downto 8),
+F_D_Rsrc2=>OutInstruction(13 downto 11),
+D_E_Rdest=>destregOut,
+D_E_Rdest2=>srcreg1Out,
+intSelec=>selCU,
+D_E_Mem_read=>OutMem(4),--load use case..
+Br_Taken=>brtakenHU,
+clk=>clk ,
+------------OUTPUT--------------
+F_flush=>FlushHaz,
+D_flush=>D_flush,
+stall=>StallHU,
+resetCounter=>ResetCounter);
+------------------------------------------------------------------------------------------------
 --control unit (d)
 CU:  ControlUnit port map(clk=>clk ,
 INT=> INT,
 Reset => Reset ,
+rstCounter=>ResetCounter,
 op_code => OutInstruction(4 downto 0),
 Rdst =>OutInstruction(7 downto 5),
 Rsrc=> OutInstruction(10 downto 8) ,
@@ -376,14 +444,31 @@ StallCU=> StallCU ,
 F_Flush=> F_Flush ,
 WrFlags=> WrFlags,
 ChangePC => ChangePC,
+selOUT=>selCU,
 MemSrcData=> MemSrcData);
 
 ex_mem_wbSignals(7 downto 0)<=ALUsrc&ALUop&WrFlags&CarryEN&BrType&BranchEN;
-ex_mem_wbSignals(15 downto 8)<="00"&memWrite&memRead&MemSrcData&StackAddr&StackEN;
+ex_mem_wbSignals(15 downto 8)<='0'&OUTportEN&memWrite&memRead&MemSrcData&StackAddr&StackEN;
 ex_mem_wbSignals(21 downto 16)<='0'&WBdataSrc&memTOreg&regWrite2&regWrite;
 ex_mem_wbSignals(31 downto 22)<= (others=>'0');
-
-
+-------------------------------------------------------------------------------------
+forwUnit: forwardingUnit port map(
+--Inputs--
+DErsrc1 =>srcreg1Out,  --D/E buffer out Rsrc1
+DErsrc2 =>srcreg2Out,
+EMrdst=> RdestOUTm,
+MWrdst=>wReg1,
+EMrdst2=> Rdest2OUTm,
+MWrdst2=>wReg2,
+EMregWr=>OutputWB(0),
+MWregWr=>WBsignalss(0),
+EMregWr2=>OutputWB(1),
+MWregWr2=>WBsignalss(1),
+ALUsrc=>exesignalOut(7),
+--outputs--
+forwardA=>ForwardA,
+forwardB=>ForwardB,
+swapEn=>swapEn);
 ------------------Mux of signals ------------------------------------
 Mcontrol: mux2  generic map(n) port map(in1=> ex_mem_wbSignals ,
 in2=>x"00000000",
@@ -446,12 +531,21 @@ datareg2out=>  datareg2Out  ,
 exesignalout=> exesignalOut   , --this is 8 bits divided into many signals "control unit"
 memsignalout=>  memsignalOut  , --this is 8 bits divided into many signals "control unit"
 wbsignalout=>  wbsignalOut  );--this is 6 bits divided into many signals  "control unit"
+-----------------------------------------------------------------------------------------------
+--Selector for SWAP..
+AluOutForwU<=DataSWAPOUT when swapEn='1'
+	  else AluOUTout;
+
+AluOutForwUFinal<=AluOutForwU when OutputWB(4 downto 3)="00" else
+	  INport_EM when OutputWB(4 downto 3)="01" else
+	  immEM when OutputWB(4 downto 3)="10";-- else
+	 -- wDataSwap ;
 ----------------------------------------------------------------------------------------------
 --EXECUTE STAGE
 EXE_stage: EXECUTE generic map(n) port map(pcin=> OutPC_DE,
 regfiledata1=>  datareg1Out   ,
-ALUoutmem=>  aluOutput    , 
-WBdata=>  WBDATAA   ,  
+ALUoutmem=>  AluOutForwUFinal    , 
+WBdata=>  WBdataFU   ,  
 regfiledata2=>  datareg2Out   ,
 immvaluein=>  immvalueOut   ,
 effaddin=>  effaddrOut   ,
@@ -459,10 +553,10 @@ readdatafromMEM=>  ReadOutMem   ,
 BRenable=> exesignalOut(0) , --one bit from exesignalout "control unit"
 Rst=>Reset,
 clk=> clk,
-BRtype=> exesignalOut(2 downto 1) ,   --one bit from exesignalout "control unit"
-forwardA=> "00",  											 --from forwardunit  
-forwardB=> "00" ,  									 	   	 --from forwardunit  
-carryenab=> exesignalOut(4 downto 3)   ,  --one bit from exesignalout "control unit"
+BRtype=> exesignalOut(2 downto 1) ,   --2 bits from exesignalout "control unit"
+forwardA=> ForwardA,  											 --from forwardunit  
+forwardB=> ForwardB ,  									 	   	 --from forwardunit  
+carryenab=> exesignalOut(4 downto 3)   ,  --2 bits from exesignalout "control unit"
 Rdestin=>destregOut , 
 Rdest2in=>srcreg1Out ,  
 instr=> instrOut,
@@ -476,12 +570,14 @@ ALUout=> AluOut    ,
 DATASWAP=>  DataSwap   ,
 PCJMP=> PcJump    ,
 BRANCH=>branchEx,
-toOUTPORT=>  ToOutport   ,
+toOUTPORT=>  OUTportTemp   ,
 --BRANCH IN FETCH STAGE
 Rdestout=>  RdestOut   ,
 Rdest2out=>   Rdest2Out  , 
 BRTAKEN => BrEnExecute   );
-
+-------------------------------------------------------------------------------------------------
+--To Out Port ..
+OUTport<=OUTportTemp when memsignalOut(6)='1';
 -------------------------------------------------------------------------------------------------
 ---EXE TO MEM BUFFER
 BUFFERextomem:bufferr  port map(pcin=>PC_outEU,
@@ -532,7 +628,7 @@ rdest1=>   R1     ,
 rdest2=>    R2    );
 
 ------------------------------------------------------------------------------------------------------------
----buffer 
+---Mem/WB buffer 
 buff4 : buffer4  generic map(n) port map(readdata=> ReadOutMem   ,
 dataswaps=>  dataswapOutm           ,
 aluoutp=>    aluOutput        ,
@@ -559,5 +655,10 @@ in2=>  AlUouttowb     ,
 sel=>WBsignalss(2) ,  --control signal
 outMx => WBDATAA );
 
+--Mux 4x1 to select the WB data to go to forw unit..
+WBdataFU<=WBDATAA when WBsignalss(4 downto 3)="00" else
+	  INport_MW when WBsignalss(4 downto 3)="01" else
+	  immMW when WBsignalss(4 downto 3)="10";-- else
+	 -- wDataSwap ;
 ----------------------------------------------------------------------------------------------------------
 end RISC_processor_arch;

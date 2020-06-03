@@ -32,7 +32,7 @@ component CCRregister is
 
 port (
 inflags:in std_logic_vector(3 downto 0);
-clkk,rstt:in std_logic;
+clkk,rstt,brTaken:in std_logic;
 carryenable: in std_logic_vector(1 downto 0);
 branchtype: in std_logic_vector(1 downto 0);
 outflags:out std_logic_vector(3 downto 0)); --for flags
@@ -78,39 +78,40 @@ End component;
 signal temp1 ,temp2 : std_logic_vector (31 downto 0);
 signal out2mux2toALU ,out1mux2toALU : std_logic_vector (31 downto 0);
 signal flagsoutfromALU ,outofzeroextract,inflagstoccr,OUTflagsfromccr: std_logic_vector (3 downto 0);
-signal outflagtobr : std_logic;
+signal outflagtobr,Br_Taken : std_logic;
 signal outmux2x1: std_logic_vector (4 downto 0);
 begin
 -- 2nd mux to alu
 MUX421 : Mux4x1 GENERIC MAP(n) port map(regfiledata2,immvaluein,ALUoutmem,WBdata,forwardB,temp1);
-out2mux2toALU<=temp1;
+--out2mux2toALU<=temp1;
 DATASWAP<=temp1;
 
 --1st mux to alu
 MUX311 : Mux4x1 GENERIC MAP(n) port map(regfiledata1,regfiledata1,ALUoutmem,WBdata,forwardA,temp2);
-out1mux2toALU<=temp2;
+--out1mux2toALU<=temp2;
 PCJMP<=temp2;
 toOUTPORT<=temp2;
 BRANCH<=temp2;
 
 
 -- ALU
-ALU1: ALU GENERIC MAP(n) port map (out1mux2toALU,out2mux2toALU,outmux2x1,ALUout,flagsoutfromALU);
+ALU1: ALU GENERIC MAP(n) port map (temp2,temp1,instr,ALUout,flagsoutfromALU);
 --mux 2x1 as a selector to ALU func
-muxselector: mux1 GENERIC MAP(5) port map(instr,"00000",ALUOP,outmux2x1);
+--muxselector: mux1 GENERIC MAP(5) port map(instr,"10000",ALUOP,outmux2x1);
 
 --flags from alu to mux 2x1
 MUX2x1fromalu: mux1 GENERIC MAP(4) port map(flagsoutfromALU,outofzeroextract,wrflags,inflagstoccr);
 --zero extract
 zeroextract1: ZEROEXTRACT port map( readdatafromMEM   ,outofzeroextract);
+Br_Taken<= ( outflagtobr AND BRenable);
 --ccr
-CCR1 :  CCRregister  port map (inflagstoccr ,clk ,Rst,carryenab,BRtype,OUTflagsfromccr);
+CCR1 :  CCRregister  port map (inflagstoccr ,clk ,Rst,Br_Taken ,carryenab,BRtype,OUTflagsfromccr);
 --ccr1: CCRregister 
 zeroextend1: ZEROEXTEND port map (OUTflagsfromccr,flags);
 --flags to mux4x1
 MUX423 : Mux4x11 port map('1',OUTflagsfromccr(0),OUTflagsfromccr(1),OUTflagsfromccr(2),BRtype,outflagtobr);
 
-BRTAKEN <= ( outflagtobr AND BRenable);
+BRTAKEN <=Br_Taken;
 pcout<=pcin;
 effaddout<=effaddin;
 Rdestout<=Rdestin;

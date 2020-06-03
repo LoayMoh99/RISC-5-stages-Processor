@@ -38,6 +38,6 @@ begin
 enable <= not Stall;
 
 PC1: LoayregisterFalling Generic map(32) PORT MAP(PC,Clk,reset,enable,OutPC);
-inport: LoayregisterFalling generic map(32) port map(inportIN,clk,flush,'1',inportOUT);
+inport: LoayregisterFalling generic map(32) port map(inportIN,clk,Flush,enable,inportOUT);
 Inst1: Flushreg PORT MAP(Instruction,Clk,Flush,enable,OutInstruction);
 END arch_FDbuffer;
